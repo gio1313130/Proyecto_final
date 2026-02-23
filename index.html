@@ -1,190 +1,1572 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Espacio y Exploración Espacial</title>
-    <meta name="description" content="Página informativa sobre el espacio y la exploración espacial: historia, misiones, tecnología y recursos." />
-    <nav class="navbar" role="navigation" aria-label="Barra principal">
-      <div class="nav-container">
-        <div class="brand">
-          <div class="logo" aria-hidden="true">EO</div>
-          <div style="margin-left:12px">
-            <div style="font-weight:700">Espacio & Exploración</div>
-            <div class="small">Descubre el universo</div>
-          </div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ORBITA: Explora el espacio, descubre misiones, tecnología y el futuro de la exploración espacial. Inspirador, educativo, accesible.">
+    <meta name="keywords" content="espacio, exploración, misiones, tecnología, astronomía, NASA, SpaceX">
+    <meta name="author" content="Team ORBITA">
+    <meta name="theme-color" content="#071023">
+    <title>ORBITA — Exploración Espacial Moderna</title>
 
-        <div class="nav-links" aria-hidden="false">
-          <a href="#sobre">Sobre</a>
-          <a href="#misiones">Misiones</a>
-          <a href="#tecnologia">Tecnología</a>
-          <a href="#galeria">Galería</a>
-          <a href="#recursos">Recursos</a>
-        </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <div class="nav-actions">
-          <a class="cta secondary mobile-hide" href="#tipografia">Tipografía</a>
-          <a class="cta" href="#main">Explorar</a>
-        </div>
-      </div>
-    </nav>
-      footer{padding:18px;text-align:center;color:var(--muted);font-size:0.9rem}
-      .small{font-size:0.95rem;color:var(--muted)}
-      @media(min-width:900px){.hero{grid-template-columns:1fr 360px}}
-      .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#001322;border-radius:8px;text-decoration:none;font-weight:600}
-      .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-      a.anchor{color:var(--accent);text-decoration:none}
-      /* pequeñas mejoras de accesibilidad */
-      .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    <style>
+        /* ─────────────────────────────────────────────────────────────
+           VARIABLES Y RESET GLOBAL
+           ───────────────────────────────────────────────────────────── */
+        :root {
+            --bg-primary: #071023;
+            --bg-secondary: #0a1628;
+            --bg-tertiary: #0f2438;
+            --accent-primary: #66d9ff;
+            --accent-secondary: #9b63ff;
+            --accent-tertiary: #34e0b2;
+            --accent-warm: #ff6b6b;
+            --text-primary: #eef6ff;
+            --text-secondary: #b6c2d1;
+            --text-tertiary: #7a8ba3;
+            --glass: rgba(255, 255, 255, 0.04);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.35);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --spacing-unit: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #031622 50%, #0a0f1d 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Respeto a preferencia de movimiento */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           TIPOGRAFÍA Y ELEMENTOS BASE
+           ───────────────────────────────────────────────────────────── */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+        h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+        h4 { font-size: 1.1rem; }
+        p { margin-bottom: calc(var(--spacing-unit) * 1.5); color: var(--text-secondary); }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover { color: var(--accent-tertiary); }
+
+        /* Link focus visible para accesibilidad */
+        a:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        button:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 4px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           NAVBAR
+           ───────────────────────────────────────────────────────────── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(7, 16, 35, 0.8) 0%, rgba(7, 16, 35, 0.6) 100%);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow-sm);
+            padding: calc(var(--spacing-unit) * 1.5) 0;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 1.5);
+            flex-shrink: 0;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--bg-primary);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-name {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .brand-tagline {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 0.5);
+            list-style: none;
+        }
+
+        .nav-menu a {
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+            color: var(--text-secondary);
+            border-radius: 6px;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-primary);
+        }
+
+        .nav-cta {
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 2);
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+            color: var(--bg-primary);
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Responsive navbar */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .navbar-container { padding: 0 calc(var(--spacing-unit) * 1); }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           HERO SECTION CON ESTRELLAS
+           ───────────────────────────────────────────────────────────── */
+        .hero {
+            position: relative;
+            padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 2);
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Fondo con estrellas CSS */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 60px 70px, #fff, transparent),
+                radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
+                radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 90px 10px, #eee, transparent);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.4;
+            animation: twinkle 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center top, rgba(102, 217, 255, 0.1), transparent 60%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1.5);
+            background: rgba(102, 217, 255, 0.1);
+            border: 1px solid var(--accent-primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            font-weight: 600;
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            color: var(--text-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            animation: slideInDown 0.8s ease-out 0.1s both;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            animation: slideInDown 0.8s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 2);
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInDown 0.8s ease-out 0.3s both;
+        }
+
+        .btn {
+            padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 2.5);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 0.75);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(102, 217, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(102, 217, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           SECCIONES GENERALES
+           ───────────────────────────────────────────────────────────── */
+        section {
+            padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 2);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .section-header h2 {
+            margin-bottom: calc(var(--spacing-unit) * 1);
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 2px;
+            margin: calc(var(--spacing-unit) * 1.5) auto;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           MISIONES (CARDS)
+           ───────────────────────────────────────────────────────────── */
+        #misiones {
+            background: linear-gradient(180deg, transparent, rgba(102, 217, 255, 0.02));
+        }
+
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: calc(var(--spacing-unit) * 2.5);
+        }
+
+        .mission-card {
+            background: linear-gradient(135deg, var(--glass), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: calc(var(--spacing-unit) * 2);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(102, 217, 255, 0.15);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+        }
+
+        .mission-year {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .mission-card h3 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .mission-tags {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 0.75);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: calc(var(--spacing-unit) * 0.35) calc(var(--spacing-unit) * 0.75);
+            background: rgba(102, 217, 255, 0.1);
+            border: 1px solid rgba(102, 217, 255, 0.3);
+            border-radius: 4px;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .mission-btn {
+            align-self: flex-start;
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .mission-btn:hover {
+            background: var(--accent-tertiary);
+            transform: translateX(4px);
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           TECNOLOGÍA (GRID)
+           ───────────────────────────────────────────────────────────── */
+        #tecnologia {
+            background: linear-gradient(180deg, rgba(155, 99, 255, 0.02), transparent);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .tech-card {
+            background: linear-gradient(135deg, var(--glass), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: calc(var(--spacing-unit) * 2.5);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-secondary);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(155, 99, 255, 0.05));
+            box-shadow: 0 20px 40px rgba(155, 99, 255, 0.15);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .tech-card h3 {
+            margin: 0 0 calc(var(--spacing-unit) * 1) 0;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           TIMELINE
+           ───────────────────────────────────────────────────────────── */
+        #timeline {
+            background: linear-gradient(180deg, transparent, rgba(52, 224, 178, 0.02));
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+            position: relative;
+            border-left: 2px solid var(--accent-tertiary);
+            opacity: 0;
+            animation: fadeInLeft 0.6s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -11px;
+            top: calc(var(--spacing-unit) * 0.5);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-tertiary);
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 12px rgba(52, 224, 178, 0.4);
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-tertiary);
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: calc(var(--spacing-unit) * 0.75);
+        }
+
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           ASTRONOMÍA
+           ───────────────────────────────────────────────────────────── */
+        #astronomia .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 4);
+            align-items: center;
+        }
+
+        .astro-text p {
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .fact-box {
+            background: linear-gradient(135deg, rgba(52, 224, 178, 0.1), rgba(102, 217, 255, 0.05));
+            border-left: 4px solid var(--accent-tertiary);
+            padding: calc(var(--spacing-unit) * 2);
+            border-radius: 8px;
+            margin-top: calc(var(--spacing-unit) * 2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .fact-box:hover {
+            background: linear-gradient(135deg, rgba(52, 224, 178, 0.15), rgba(102, 217, 255, 0.1));
+            transform: translateX(8px);
+        }
+
+        .fact-label {
+            font-size: 0.85rem;
+            color: var(--accent-tertiary);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: calc(var(--spacing-unit) * 0.75);
+        }
+
+        .fact-content {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            #astronomia .section-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           BLOG
+           ───────────────────────────────────────────────────────────── */
+        #blog {
+            background: linear-gradient(180deg, transparent, rgba(255, 107, 107, 0.03));
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 1);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .filter-chip {
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+            background: transparent;
+            border: 1px solid var(--text-tertiary);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-chip.active {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .filter-chip:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: calc(var(--spacing-unit) * 2.5);
+        }
+
+        .blog-card {
+            background: linear-gradient(135deg, var(--glass), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-header {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+            height: 180px;
+            display: flex;
+            align-items: flex-end;
+            padding: calc(var(--spacing-unit) * 2);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 1);
+            color: var(--bg-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .blog-content {
+            padding: calc(var(--spacing-unit) * 2);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: calc(var(--spacing-unit) * 0.75);
+        }
+
+        .blog-card h3 {
+            margin: 0 0 calc(var(--spacing-unit) * 1) 0;
+            color: var(--text-primary);
+        }
+
+        .blog-card p {
+            flex: 1;
+            margin: 0 0 calc(var(--spacing-unit) * 1.5) 0;
+        }
+
+        .blog-link {
+            color: var(--accent-tertiary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 0.5);
+        }
+
+        .blog-link:hover { transform: translateX(4px); }
+
+        /* ─────────────────────────────────────────────────────────────
+           NEWSLETTER
+           ───────────────────────────────────────────────────────────── */
+        #newsletter {
+            background: linear-gradient(135deg, rgba(155, 99, 255, 0.05), rgba(102, 217, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: calc(var(--spacing-unit) * 2) auto 0;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: calc(var(--spacing-unit) * 1);
+        }
+
+        .newsletter-input {
+            padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.75);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: var(--text-tertiary);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-primary);
+        }
+
+        .newsletter-btn {
+            padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 2.5);
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+            color: var(--bg-primary);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .newsletter-message {
+            margin-top: calc(var(--spacing-unit) * 1.5);
+            font-size: 0.9rem;
+            min-height: 20px;
+        }
+
+        .message-success {
+            color: var(--accent-tertiary);
+        }
+
+        .message-error {
+            color: var(--accent-warm);
+        }
+
+        @media (max-width: 600px) {
+            .newsletter-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           FAQ ACORDEÓN
+           ───────────────────────────────────────────────────────────── */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, var(--glass), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-button {
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 1.75) calc(var(--spacing-unit) * 2);
+            background: transparent;
+            border: none;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .faq-button:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-button:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: -2px;
+        }
+
+        .faq-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            background: rgba(102, 217, 255, 0.1);
+            color: var(--accent-primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(180deg);
+            background: rgba(102, 217, 255, 0.2);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-text {
+            padding: 0 calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 1.75) calc(var(--spacing-unit) * 2);
+            color: var(--text-secondary);
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           CTA FINAL
+           ───────────────────────────────────────────────────────────── */
+        #final-cta {
+            background: linear-gradient(135deg, rgba(102, 217, 255, 0.1), rgba(52, 224, 178, 0.05));
+            border: 1px solid rgba(102, 217, 255, 0.2);
+            border-radius: 16px;
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2);
+        }
+
+        #final-cta h2 {
+            color: var(--text-primary);
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        #final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: calc(var(--spacing-unit) * 2.5);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 1.5);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           FOOTER
+           ───────────────────────────────────────────────────────────── */
+        footer {
+            background: linear-gradient(180deg, transparent, rgba(7, 16, 35, 0.8));
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .footer-section h3 {
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            color: var(--text-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: calc(var(--spacing-unit) * 0.75);
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: calc(var(--spacing-unit) * 2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 0.5);
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.5);
+            background: rgba(102, 217, 255, 0.1);
+            border: 1px solid rgba(102, 217, 255, 0.3);
+            border-radius: 6px;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .back-to-top:hover {
+            background: rgba(102, 217, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           RESPONSIVE
+           ───────────────────────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            section { padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 1.5); }
+            .hero { padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 1.5); min-height: 60vh; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .mission-card, .blog-card, .tech-card { padding: calc(var(--spacing-unit) * 1.5); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* Esqueleto de carga */
+        .skeleton {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
     </style>
-  </head>
-  <body>
-    <!-- Enlace para saltar directamente al contenido principal (accesibilidad) -->
-    <a class="visually-hidden" href="#main">Saltar al contenido</a>
-
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Espacio y Exploración Espacial</title>
-      <meta name="description" content="Página informativa sobre el espacio y la exploración espacial: historia, misiones, tecnología y recursos." />
-      <!-- Fuentes -->
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-      <!-- Enlace al CSS externo -->
-      <link rel="stylesheet" href="style.css">
-    </head>
-      <nav aria-label="Navegación principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#misiones">Misiones</a>
-        <a href="#tecnologia">Tecnología</a>
-        <a href="#galeria">Galería</a>
-      </nav>
-    </header>
-
-    <section class="hero" aria-hidden="false">
-      <div class="hero-content">
-        <h1 class="title"><span class="title-gradient">El espacio</span> — exploración, ciencia y futuro</h1>
-        <p class="subtitle">Un recorrido claro y visual por las misiones históricas y la tecnología que nos impulsa a conocer el cosmos. Aprende con secciones organizadas y recursos confiables.</p>
-        <div class="toc">
-          <a class="btn" href="#misiones">Ver misiones</a>
-          <a class="btn" href="#galeria">Ver galería</a>
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════
+         NAVBAR
+         ═══════════════════════════════════════════════════════════════ -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">⊙</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#misiones">Misiones</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
+                <li><a href="#astronomia">Astronomía</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="nav-cta" onclick="document.getElementById('misiones').scrollIntoView({behavior: 'smooth'})">Explorar Misiones</button>
         </div>
-      </div>
-      <aside class="card" aria-label="Resumen">
-        <h3>¿Por qué explorar?</h3>
-        <p class="small">Explorar el espacio nos permite responder preguntas fundamentales: ¿cómo se originó la vida? ¿qué recursos existen fuera de la Tierra? Además, impulsa tecnologías aplicables en medicina, comunicaciones y energía.</p>
-      </aside>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero" id="inicio">
+        <div class="hero::before"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-badge">⭐ Actualizado 2026 — Curado para Estudiantes</div>
+            <h1>Explorando <span class="gradient">el universo</span>, misión por misión</h1>
+            <p class="hero-subtitle">Un recorrido claro y visual por las misiones históricas, tecnología espacial y el futuro de la exploración. Inspirador, educativo y accesible.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('misiones').scrollIntoView({behavior: 'smooth'})">
+                    ↓ Ver Misiones
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('blog').scrollIntoView({behavior: 'smooth'})">
+                    Leer Blog
+                </button>
+            </div>
+        </div>
     </section>
 
-    <main id="main">
-      <!-- Sección principal: qué es el espacio -->
-      <section id="sobre" class="card" aria-labelledby="sobre-h">
-        <h2 id="sobre-h">¿Qué es el espacio?</h2>
-        <p class="small">El espacio exterior es la región más allá de la atmósfera terrestre donde la influencia directa del aire es mínima. Está compuesto por vacío, radiación, cuerpos celestes (planetas, estrellas, cometas) y estructuras a gran escala (galaxias, cúmulos).</p>
-        <p class="small">Estudiar el espacio implica medir radiación, analizar composición química, mapear órbitas y observar fenómenos a distintas longitudes de onda (radio, infrarrojo, visible, rayos X).</p>
-      </section>
+    <!-- ═══════════════════════════════════════════════════════════════
+         MISIONES
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="misiones">
+        <div class="container">
+            <div class="section-header">
+                <h2>Misiones Destacadas</h2>
+                <div class="accent-line"></div>
+                <p>Explora los hitos más importantes de la exploración espacial humana y robótica.</p>
+            </div>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <div class="mission-year">1969</div>
+                    <h3>Apolo 11</h3>
+                    <p>La primera misión tripulada que llevó humanos a la Luna. Neil Armstrong y Buzz Aldrin caminaron sobre la superficie lunar, un logro científico y humano insuperable.</p>
+                    <div class="mission-tags">
+                        <span class="tag">Tripulada</span>
+                        <span class="tag">Luna</span>
+                        <span class="tag">Histórica</span>
+                    </div>
+                    <button class="mission-btn">Ver Detalles →</button>
+                </div>
 
-      <!-- Historia: hechos clave con explicaciones -->
-      <section id="historia" class="card" aria-labelledby="historia-h">
-        <h2 id="historia-h">Historia breve</h2>
-        <div class="grid">
-          <article>
-            <h3>1957 — Sputnik</h3>
-            <p class="small">El lanzamiento del Sputnik 1 por la URSS fue el primer satélite artificial en orbitar la Tierra. Abrió la puerta a comunicaciones por satélite y estudios atmosféricos desde el espacio.</p>
-          </article>
-          <article>
-            <h3>1969 — Apolo 11</h3>
-            <p class="small">Neil Armstrong y Buzz Aldrin caminaron sobre la Luna. Esa misión demostró la capacidad humana para viajes tripulados más allá de la órbita terrestre baja.</p>
-          </article>
-          <article>
-            <h3>Robótica moderna</h3>
-            <p class="small">Sondas y rovers han permitido explorar planetas y lunas con detalle: medir condiciones, buscar signos de agua y realizar observaciones que serían imposibles desde la Tierra.</p>
-          </article>
+                <div class="mission-card">
+                    <div class="mission-year">1977</div>
+                    <h3>Voyager 1 y 2</h3>
+                    <p>Sondas gemelas que exploraron los planetas exteriores. Hoy transmiten datos desde el espacio interestelar, llevando mensajes de la humanidad a otros mundos.</p>
+                    <div class="mission-tags">
+                        <span class="tag">Robótica</span>
+                        <span class="tag">Interestelar</span>
+                        <span class="tag">Activa</span>
+                    </div>
+                    <button class="mission-btn">Ver Detalles →</button>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-year">1990</div>
+                    <h3>Telescopio Hubble</h3>
+                    <p>Observatorio espacial que revolucionó la astronomía. Ha capturado imágenes profundas del universo, redefiniendo la cosmología moderna y nuestra comprensión del cosmos.</p>
+                    <div class="mission-tags">
+                        <span class="tag">Observatorio</span>
+                        <span class="tag">Científica</span>
+                        <span class="tag">Activa</span>
+                    </div>
+                    <button class="mission-btn">Ver Detalles →</button>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-year">2012–Hoy</div>
+                    <h3>Rovers de Marte</h3>
+                    <p>Curiosity y Perseverance exploran Marte buscando agua y signos de vida ancestral. Son laboratorios móviles que transforman nuestra comprensión del Planeta Rojo.</p>
+                    <div class="mission-tags">
+                        <span class="tag">Robótica</span>
+                        <span class="tag">Marte</span>
+                        <span class="tag">En curso</span>
+                    </div>
+                    <button class="mission-btn">Ver Detalles →</button>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-year">2021</div>
+                    <h3>James Webb</h3>
+                    <p>El observatorio más avanzado: ve miles de millones de años atrás. Revoluciona la astronomía infrarroja y revela los secretos de galaxias distantes y formación estelar.</p>
+                    <div class="mission-tags">
+                        <span class="tag">Observatorio</span>
+                        <span class="tag">Infrarrojo</span>
+                        <span class="tag">Activa</span>
+                    </div>
+                    <button class="mission-btn">Ver Detalles →</button>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-year">2025+</div>
+                    <h3>Artemis</h3>
+                    <p>Programa para volver humanos a la Luna y establecer presencia sostenible. Abre el camino hacia exploración tripulada de Marte y más allá.</p>
+                    <div class="mission-tags">
+                        <span class="tag">Próxima</span>
+                        <span class="tag">Luna</span>
+                        <span class="tag">Tripulada</span>
+                    </div>
+                    <button class="mission-btn">Ver Detalles →</button>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Misiones: lista con descripción breve y propósito -->
-      <section id="misiones" class="card" aria-labelledby="misiones-h">
-        <h2 id="misiones-h">Misiones destacadas y su contribución</h2>
-        <dl class="small">
-          <dt><strong>Voyager 1 y 2</strong></dt>
-          <dd>Enviadas para estudiar los planetas exteriores; hoy siguen transmitiendo datos desde el espacio interestelar.</dd>
-          <dt><strong>Hubble Space Telescope</strong></dt>
-          <dd>Telescopio en órbita que ha capturado imágenes profundas del universo, ayudando a medir la edad y la expansión del cosmos.</dd>
-          <dt><strong>Curiosity y Perseverance</strong></dt>
-          <dd>Rovers en Marte que analizan rocas y buscan evidencias de condiciones pasadas que pudieran haber sostenido vida microbiana.</dd>
-          <dt><strong>Artemis</strong></dt>
-          <dd>Programa que busca devolver humanos a la Luna y establecer capacidades para exploraciones más largas y sostenibles.</dd>
-        </dl>
-      </section>
-
-      <!-- Tecnología: explicación en bullets -->
-      <section id="tecnologia" class="card" aria-labelledby="tecnologia-h">
-        <h2 id="tecnologia-h">Tecnologías clave</h2>
-        <p class="small">A continuación se describen rápidamente las tecnologías que hacen posible la exploración:</p>
-        <ul class="small">
-          <li><strong>Cohetes:</strong> Proporcionan la energía inicial para salir de la gravedad terrestre.</li>
-          <li><strong>Sistemas de soporte vital:</strong> Mantienen temperatura, presión y oxígeno en misiones tripuladas.</li>
-          <li><strong>Sensores y cámaras:</strong> Recolectan datos científicos y permiten navegación y mapeo.</li>
-          <li><strong>Propulsión avanzada:</strong> Iónica y otras técnicas prometen viajes más eficientes a largo plazo.</li>
-        </ul>
-      </section>
-
-      <!-- Galería con pies claros -->
-      <!-- Galería con imágenes: las imágenes deben guardarse en la carpeta "images/" con los nombres indicados abajo -->
-      <section id="galeria" class="card" aria-labelledby="galeria-h">
-        <h2 id="galeria-h">Galería</h2>
-        <p class="small">Coloca imágenes en la carpeta <code>images/</code> con los siguientes nombres: <code>nebulosa.jpg</code>, <code>planet.jpg</code>, <code>astronaut.jpg</code>. A continuación se muestran descripciones que aparecerán si faltan las imágenes.</p>
-        <div class="grid">
-          <div>
-            <h4>Nebulosa</h4>
-            <!-- Imagen añadida por el usuario: images/nebulosa.jpeg -->
-            <img class="image" src="images/nebulosa.jpeg" alt="Nebulosa colorida">
-            <p class="small">Región de gas y polvo donde nacen nuevas estrellas. Sus colores se deben a diferentes elementos y procesos físicos.</p>
-          </div>
-          <div>
-            <h4>Planeta</h4>
-            <!-- Imagen añadida por el usuario: images/planeta.jpeg -->
-            <img class="image" src="images/planeta.jpeg" alt="Planeta en primer plano">
-            <p class="small">Cuerpo celeste que orbita una estrella; puede presentar atmósfera, geología y condiciones que varían ampliamente entre sistemas.</p>
-          </div>
-          <div>
-            <h4>Astronauta</h4>
-            <!-- Imagen añadida por el usuario: images/astronauta.jpeg -->
-            <img class="image" src="images/astronauta.jpeg" alt="Astronauta en actividad extravehicular">
-            <p class="small">Persona entrenada para operar en el espacio, realizar experimentos y mantener la estación o las naves durante misiones tripuladas.</p>
-          </div>
+    <!-- ═══════════════════════════════════════════════════════════════
+         TECNOLOGÍA
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="tecnologia">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tecnologías Clave</h2>
+                <div class="accent-line"></div>
+                <p>Descubre los pilares tecnológicos que hacen posible la exploración espacial.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🚀</div>
+                    <h3>Propulsión Avanzada</h3>
+                    <p>Sistemas desde combustible químico hasta iónico. Permiten escapar de la gravedad terrestre y alcanzar velocidades interetelares.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🛡️</div>
+                    <h3>Escudos Térmicos</h3>
+                    <p>Protegen naves y astronautas de temperaturas extremas durante reentrada. Materiales avanzados que resisten miles de grados.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔭</div>
+                    <h3>Telescopios</h3>
+                    <p>Desde óptica tradicional hasta infrarrojo y rayos X. Herramientas que desvelan el universo en toda su complejidad.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🤖</div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Automatiza tareas en rovers y satélites. Permite tomar decisiones en ambientes remotos sin latencia de comunicación.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🏗️</div>
+                    <h3>Hábitats Espaciales</h3>
+                    <p>Estaciones orbitales y futuras bases lunares. Sistemas de soporte vital para misiones tripuladas de larga duración.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📡</div>
+                    <h3>Comunicaciones Profundas</h3>
+                    <p>Redes para alcanzar sondas lejanas en el espacio interestelar. Señales que viajan millones de kilómetros.</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Recursos ampliados con breve descripción de cada fuente -->
-      <section id="recursos" class="card" aria-labelledby="recursos-h">
-        <h2 id="recursos-h">Recursos y lectura recomendada</h2>
-        <ul class="small">
-          <li><a class="anchor" href="https://www.nasa.gov" target="_blank" rel="noopener">NASA</a> — noticias, misiones y recursos educativos.</li>
-          <li><a class="anchor" href="https://www.esa.int" target="_blank" rel="noopener">ESA</a> — la Agencia Espacial Europea, con material en varios idiomas.</li>
-          <li><a class="anchor" href="https://www.spacex.com" target="_blank" rel="noopener">SpaceX</a> — información sobre lanzadores y proyectos comerciales.</li>
-        </ul>
-        <p class="small">Si quieres aprender más, explora los sitios anteriores y busca cursos de astronomía básica o astrofísica para comenzar.</p>
-      </section>
+    <!-- ═══════════════════════════════════════════════════════════════
+         TIMELINE
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2>Línea del Tiempo</h2>
+                <div class="accent-line"></div>
+                <p>Hitos clave en la historia de la exploración espacial.</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1957</div>
+                    <div class="timeline-title">Sputnik 1</div>
+                    <p class="timeline-desc">La Unión Soviética lanza el primer satélite artificial. Marca el comienzo de la era espacial y la competencia por el espacio.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1969</div>
+                    <div class="timeline-title">Apolo 11 llega a la Luna</div>
+                    <p class="timeline-desc">Primer alunizaje tripulado. "Un pequeño paso para el hombre, un gran salto para la humanidad."</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1990</div>
+                    <div class="timeline-title">Hubble desplegado</div>
+                    <p class="timeline-desc">Telescopio espacial que revoluciona la astronomía. Descubre exoplanetas, materia oscura y expande nuestra visión del cosmos.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Hoy / 2026</div>
+                    <div class="timeline-title">Exploración Robótica Avanzada</div>
+                    <p class="timeline-desc">James Webb, Rovers en Marte, Artemis en preparación. La exploración espacial es más accesible y científica que nunca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <!-- Tipografía y decisiones de estilo -->
-      <section id="tipografia" class="card" aria-labelledby="tipografia-h">
-        <h2 id="tipografia-h">Tipografía y estilo</h2>
-        <div class="accent-line" aria-hidden="true"></div>
-        <p class="small">Decisiones de estilo aplicadas en esta página:</p>
-        <ul class="small">
-          <li><strong>Familias:</strong> 'Poppins' para títulos y 'Inter' para párrafos, para contraste y legibilidad.</li>
-          <li><strong>Uso de mayúsculas:</strong> Evitamos forzar mayúsculas en títulos (se utiliza sentence case) para mantener legibilidad; las etiquetas pequeñas o <span class="kicker">kickers</span> usan mayúsculas y tracking reducido.</li>
-          <li><strong>Jerarquía visual:</strong> Títulos más grandes y pesos mayores, líneas de acento de color y sombras para separar secciones.</li>
-          <li><strong>Color y forma:</strong> Paleta con varios acentos (azul, violeta y verde) y formas sutiles en el hero para evitar monotonía.</li>
-        </ul>
-      </section>
-    </main>
+    <!-- ═══════════════════════════════════════════════════════════════
+         ASTRONOMÍA
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="astronomia">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conceptos de Astronomía</h2>
+                <div class="accent-line"></div>
+                <p>Comprende los fenómenos que estudia la exploración espacial.</p>
+            </div>
+            <div class="section-content" style="margin-top: calc(var(--spacing-unit) * 3);">
+                <div class="astro-text">
+                    <h3>¿Qué son los exoplanetas?</h3>
+                    <p>Planetas que orbitan estrellas lejanas. Hemos descubierto miles de ellos. Algunos pueden tener agua y condiciones para la vida.</p>
+                    <p><strong>Importancia:</strong> Nos ayudan a entender cómo se forman los sistemas planetarios y a buscar vida más allá de la Tierra.</p>
+                    <p><strong>Método de detección:</strong> Tránsitos (disminución de luz), velocidad radial, y próximamente, imágenes directas con James Webb.</p>
+                </div>
+                <div class="astro-text">
+                    <h3>Agujeros Negros</h3>
+                    <p>Regiones del espacio donde la gravedad es tan intensa que nada escapa, ni la luz. Centros de galaxias y laboratorios de física extrema.</p>
+                    <p><strong>Cómo se forman:</strong> Colapso de estrellas masivas o fusión en centros galácticos.</p>
+                    <p><strong>Observación:</strong> Detectamos radiación de materia cayendo hacia ellos. La sombra del agujero negro M87 fue fotografiada en 2019.</p>
+                </div>
+            </div>
 
-    <footer>
-      <div>Creado como página de muestra sobre exploración espacial. Contenido en español.</div>
-      <div class="small">¿Quieres que traduzca esto al inglés o que añada más secciones? Dime qué prefieres.</div>
+            <div class="fact-box" onclick="toggleFact(event)">
+                <div class="fact-label">📊 Dato Curioso — Click para más</div>
+                <div class="fact-content" id="fact-text">La velocidad de escape de un agujero negro es mayor que la velocidad de la luz, lo que explica por qué nada puede escapar de su gravedad.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         BLOG
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog: Últimos Artículos</h2>
+                <div class="accent-line"></div>
+                <p>Mantente actualizado con noticias y análisis sobre exploración espacial.</p>
+            </div>
+
+            <div class="blog-filters">
+                <button class="filter-chip active" onclick="filterBlog('all')">Todos</button>
+                <button class="filter-chip" onclick="filterBlog('ciencia')">Ciencia</button>
+                <button class="filter-chip" onclick="filterBlog('tecnologia')">Tecnología</button>
+                <button class="filter-chip" onclick="filterBlog('futuro')">Futuro</button>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-category="ciencia">
+                    <div class="blog-header"></div>
+                    <div class="blog-content">
+                        <div class="blog-category">CIENCIA</div>
+                        <h3>¿Hay agua en Europa?</h3>
+                        <p>La luna de Júpiter Europa tiene un océano subterráneo. Nuevas misiones buscarán signos de vida microbiana.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                            <span class="blog-meta">15 Feb 2026</span>
+                            <a href="#" class="blog-link">Leer →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tecnologia">
+                    <div class="blog-header"></div>
+                    <div class="blog-content">
+                        <div class="blog-category">TECNOLOGÍA</div>
+                        <h3>Cohetes Reutilizables</h3>
+                        <p>La propulsión reutilizable reducen costos. SpaceX lidera esta revolución con Starship y Falcon 9.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                            <span class="blog-meta">12 Feb 2026</span>
+                            <a href="#" class="blog-link">Leer →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="futuro">
+                    <div class="blog-header"></div>
+                    <div class="blog-content">
+                        <div class="blog-category">FUTURO</div>
+                        <h3>Bases Lunares en 2030</h3>
+                        <p>Artemis planea establecer campamentos permanentes en la Luna. Una puerta hacia Marte.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                            <span class="blog-meta">08 Feb 2026</span>
+                            <a href="#" class="blog-link">Leer →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="ciencia">
+                    <div class="blog-header"></div>
+                    <div class="blog-content">
+                        <div class="blog-category">CIENCIA</div>
+                        <h3>Planetas Similares a la Tierra</h3>
+                        <p>Se han descubierto exoplanetas en zona habitable. ¿Podrían albergar vida?</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                            <span class="blog-meta">05 Feb 2026</span>
+                            <a href="#" class="blog-link">Leer →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         NEWSLETTER
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="newsletter" style="margin: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2);">
+        <div class="container">
+            <h2>Suscríbete a ORBITA Newsletter</h2>
+            <p>Recibe actualizaciones sobre misiones, descubrimientos y eventos espaciales. Sin spam, máximo 1 email por semana.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                <input class="newsletter-input" type="email" placeholder="tu@email.com" id="email-input" required aria-label="Email">
+                <button type="submit" class="newsletter-btn">Suscribirse</button>
+            </form>
+            <div class="newsletter-message" id="newsletter-msg"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FAQ
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="accent-line"></div>
+                <p>Respuestas a preguntas comunes sobre exploración espacial.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-button" onclick="toggleFAQ(this)">
+                        <span>¿Cuántos astronautas han caminado en la Luna?</span>
+                        <div class="faq-toggle">↓</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-text">
+                            <p>Un total de 12 astronautas han caminado en la Luna, todos entre 1969 y 1972 en el programa Apolo. Fueron: Neil Armstrong, Buzz Aldrin, Pete Conrad, Alan Bean, Alan Shepard, Edgar Mitchell, David Scott, James Irwin, John Young, Charles Duke, Eugene Cernan y Harrison Schmitt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-button" onclick="toggleFAQ(this)">
+                        <span>¿Hay vida en otros planetas?</span>
+                        <div class="faq-toggle">↓</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-text">
+                            <p>Aún no hay evidencia confirmada de vida extraterrestre. Sin embargo, se estima que hay billones de exoplanetas. Buscamos vida en lunas como Europa (Júpiter) y Encélado (Saturno), que tienen océanos subsuperficiales. James Webb nos ayudará a analizar atmósferas de exoplanetas en busca de biosignaturas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-button" onclick="toggleFAQ(this)">
+                        <span>¿Cómo se comunican con los rovers en Marte?</span>
+                        <div class="faq-toggle">↓</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-text">
+                            <p>Mediante ondas de radio enviadas por radiotelescopios en la Tierra. Hay un retraso de 5-20 minutos según la posición de Marte. Los rovers son bastante autónomos: reciben instrucciones generales y toman decisiones propias usando IA para evitar obstáculos y seleccionar objetivos científicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-button" onclick="toggleFAQ(this)">
+                        <span>¿Cuánto cuesta una misión espacial?</span>
+                        <div class="faq-toggle">↓</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-text">
+                            <p>Varía enormemente. Un lanzamiento de Falcon 9 (SpaceX) cuesta ~$60-67 millones. Misiones científicas como James Webb costaron ~$10,000 millones (inverso a largo plazo). Artemis se estima en $90,000+ millones para múltiples lanzamientos. Los cohetes reutilizables están reduciendo estos costos dramáticamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CTA FINAL
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="final-cta">
+        <div class="container">
+            <h2>¿Listo para Despegar?</h2>
+            <p>Únete a una comunidad global de exploradores espaciales, estudiantes y curiosos por el universo.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('email-input').focus()">Suscribirse Ahora</button>
+                <button class="btn btn-secondary">Ver Fuentes Recomendadas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════════════ -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);Margin-bottom: calc(var(--spacing-unit) * 1.5);">Plataforma educativa y inspiradora sobre exploración espacial, misiones y el futuro de la humanidad en el universo.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#misiones">Misiones</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Comunidad</h3>
+                    <ul>
+                        <li><a href="#">Seguir en X</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Fuentes</h3>
+                    <ul>
+                        <li><a href="https://www.nasa.gov" target="_blank">NASA</a></li>
+                        <li><a href="https://www.esa.int" target="_blank">ESA</a></li>
+                        <li><a href="https://www.spacex.com" target="_blank">SpaceX</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary); font-size: 0.9rem;">&copy; 2026 ORBITA. Hecho con ❤️ para exploradores.</p>
+                <a href="#inicio" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Volver Arriba</a>
+            </div>
+        </div>
     </footer>
-  </body>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         JAVASCRIPT
+         ═══════════════════════════════════════════════════════════════ -->
+    <script>
+        // ──────────────────────────────────────────────────────────────
+        // Cambios en navbar al hacer scroll
+        // ──────────────────────────────────────────────────────────────
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'linear-gradient(180deg, rgba(7, 16, 35, 0.95) 0%, rgba(7, 16, 35, 0.85) 100%)';
+                navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'linear-gradient(180deg, rgba(7, 16, 35, 0.8) 0%, rgba(7, 16, 35, 0.6) 100%)';
+                navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // ──────────────────────────────────────────────────────────────
+        // Filtro de Blog
+        // ──────────────────────────────────────────────────────────────
+        function filterBlog(category) {
+            const cards = document.querySelectorAll('.blog-card');
+            const chips = document.querySelectorAll('.filter-chip');
+
+            // Actualizar estado del chip
+            chips.forEach(chip => chip.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filtrar tarjetas
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 0);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        }
+
+        // ──────────────────────────────────────────────────────────────
+        // Newsletter Validación
+        // ──────────────────────────────────────────────────────────────
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('email-input');
+            const msgBox = document.getElementById('newsletter-msg');
+            const email = emailInput.value.trim();
+
+            // Validación básica
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                msgBox.textContent = '❌ Email no válido.';
+                msgBox.className = 'newsletter-message message-error';
+                return;
+            }
+
+            // Simular envío (en producción, enviar al servidor)
+            msgBox.textContent = '✅ ¡Gracias por suscribirse! Revisa tu email.';
+            msgBox.className = 'newsletter-message message-success';
+            emailInput.value = '';
+
+            setTimeout(() => {
+                msgBox.textContent = '';
+            }, 5000);
+        }
+
+        // ──────────────────────────────────────────────────────────────
+        // FAQ Acordeón
+        // ──────────────────────────────────────────────────────────────
+        function toggleFAQ(button) {
+            const item = button.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // ──────────────────────────────────────────────────────────────
+        // Dato Curioso
+        // ──────────────────────────────────────────────────────────────
+        const facts = [
+            "La velocidad de escape de un agujero negro es mayor que la velocidad de la luz.",
+            "Un año en Venus es más largo que un día en Venus (243 días terrestres vs. 117 días).",
+            "Hay más estrellas en el universo que granos de arena en todas las playas de la Tierra.",
+            "La luz que vemos del Hubble viajó durante millones de años antes de alcanzarnos.",
+            "Europa (luna de Júpiter) tiene más agua que toda la Tierra."
+        ];
+        let currentFact = 0;
+
+        function toggleFact(event) {
+            const factText = document.getElementById('fact-text');
+            currentFact = (currentFact + 1) % facts.length;
+            factText.textContent = facts[currentFact];
+        }
+
+        // ──────────────────────────────────────────────────────────────
+        // Animaciones al entrar en pantalla (Intersection Observer)
+        // ──────────────────────────────────────────────────────────────
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.mission-card, .blog-card, .tech-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // ──────────────────────────────────────────────────────────────
+        // Accesibilidad: Manejo de teclado en FAQ
+        // ──────────────────────────────────────────────────────────────
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    button.click();
+                }
+            });
+        });
+    </script>
+</body>
 </html>
