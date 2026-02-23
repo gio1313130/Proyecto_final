@@ -1,9 +1,12 @@
 :root{
-  --bg:#081229;
+  --bg:#071023;
   --card:#0f2438;
   --muted:#b6c2d1;
   --accent:#66d9ff;
+  --accent-2:#9b63ff;
+  --accent-3:#34e0b2;
   --glass:rgba(255,255,255,0.04);
+  --shadow:rgba(2,6,23,0.6);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -21,19 +24,36 @@ header{
   align-items:center;
   justify-content:space-between;
 }
+.logo{position:relative;overflow:hidden}
+.logo::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 25%);mix-blend-mode:overlay}
 .brand{display:flex;gap:12px;align-items:center}
-.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4b7cff);display:flex;align-items:center;justify-content:center;font-weight:700}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#001322}
 nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+.navbar{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(2,6,23,0.6),rgba(2,6,23,0.35));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:background .18s,color .18s}
+.nav-links a:hover{background:rgba(255,255,255,0.03);color:var(--accent-2)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.cta{background:linear-gradient(90deg,var(--accent),var(--accent-3));color:#001322;padding:8px 12px;border-radius:10px;font-weight:700;text-decoration:none}
+.cta.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 .hero{padding:36px 18px;display:grid;grid-template-columns:1fr;gap:20px}
-.title{font-size:clamp(1.6rem,3vw,2.6rem);margin:0}
+.hero-content{max-width:720px}
+.title{font-size:clamp(1.8rem,4vw,3.2rem);margin:0;line-height:1.02}
+.title-gradient{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:var(--muted);margin-top:8px}
 .hero p{margin:0;color:var(--muted)}
 main{max-width:1000px;margin:18px auto;padding:0 18px}
-section.card{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.02));padding:18px;border-radius:10px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.03)}
+.accent-line{height:6px;width:64px;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin:8px 0}
+section.card{background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.02));padding:20px;border-radius:14px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 12px 30px var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(2,6,23,0.7)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.image{width:100%;height:160px;object-fit:cover;border-radius:8px;background:linear-gradient(135deg,#123,#345)}
+.image{width:100%;height:220px;object-fit:cover;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.45);display:block}
 footer{padding:18px;text-align:center;color:var(--muted);font-size:0.9rem}
 .small{font-size:0.95rem;color:var(--muted)}
 @media(min-width:900px){.hero{grid-template-columns:1fr 360px}}
+.mobile-hide{display:inline}
+@media(max-width:720px){.nav-links{display:none}.mobile-hide{display:none}.nav-actions{gap:6px}}
 .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#001322;border-radius:8px;text-decoration:none;font-weight:600}
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 a.anchor{color:var(--accent);text-decoration:none}
@@ -48,3 +68,16 @@ button[type="submit"]{padding:10px 14px;border-radius:8px;border:none;background
 /* Small utilities */
 .muted{color:var(--muted)}
 .kicker{font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+
+/* Typography rules */
+h1,h2,h3,h4{font-family:Poppins, system-ui, Arial, sans-serif;margin:0;color:#eef6ff}
+h1{font-weight:700;letter-spacing:-0.02em}
+h2{font-weight:600;margin-bottom:6px}
+h3{font-weight:600}
+p{font-family:Inter, system-ui, Arial, sans-serif}
+/* Use sentence case for headings (no forced uppercase), keep small labels uppercase via .kicker */
+
+/* Decorative hero shapes */
+.hero::before{content:'';position:absolute;left:0;top:0;width:420px;height:420px;background:radial-gradient(circle at 30% 30%, rgba(102,217,255,0.08), transparent 30%);filter:blur(30px);transform:translate(-40%, -20%);z-index:0}
+.hero{position:relative;z-index:1}
+

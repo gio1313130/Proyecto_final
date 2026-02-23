@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Espacio y Exploración Espacial</title>
     <meta name="description" content="Página informativa sobre el espacio y la exploración espacial: historia, misiones, tecnología y recursos." />
-    <style>
-      :root{--bg:#081229;--card:#0f2438;--muted:#b6c2d1;--accent:#66d9ff}
-      *{box-sizing:border-box}
-      body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#031022);color:#e6eef6;line-height:1.5}
-      header{padding:28px 18px;display:flex;align-items:center;justify-content:space-between}
-      .brand{display:flex;gap:12px;align-items:center}
-      .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#4b7cff);display:flex;align-items:center;justify-content:center;font-weight:700}
-      nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-      .hero{padding:36px 18px;display:grid;grid-template-columns:1fr;gap:20px}
-      .hero .title{font-size:clamp(1.6rem,3vw,2.6rem);margin:0}
-      .hero p{margin:0;color:var(--muted)}
-      main{max-width:1000px;margin:18px auto;padding:0 18px}
-      section.card{background:var(--card);padding:18px;border-radius:10px;margin-bottom:14px}
-      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-      .photo{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    <nav class="navbar" role="navigation" aria-label="Barra principal">
+      <div class="nav-container">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">EO</div>
+          <div style="margin-left:12px">
+            <div style="font-weight:700">Espacio & Exploración</div>
+            <div class="small">Descubre el universo</div>
+          </div>
+        </div>
+
+        <div class="nav-links" aria-hidden="false">
+          <a href="#sobre">Sobre</a>
+          <a href="#misiones">Misiones</a>
+          <a href="#tecnologia">Tecnología</a>
+          <a href="#galeria">Galería</a>
+          <a href="#recursos">Recursos</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="cta secondary mobile-hide" href="#tipografia">Tipografía</a>
+          <a class="cta" href="#main">Explorar</a>
+        </div>
+      </div>
+    </nav>
       footer{padding:18px;text-align:center;color:var(--muted);font-size:0.9rem}
       .small{font-size:0.95rem;color:var(--muted)}
       @media(min-width:900px){.hero{grid-template-columns:1fr 360px}}
@@ -34,14 +43,16 @@
     <!-- Enlace para saltar directamente al contenido principal (accesibilidad) -->
     <a class="visually-hidden" href="#main">Saltar al contenido</a>
 
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true">EO</div>
-        <div>
-          <strong>Espacio & Exploración</strong>
-          <div class="small">Conoce el universo y las misiones que nos llevan más allá</div>
-        </div>
-      </div>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Espacio y Exploración Espacial</title>
+      <meta name="description" content="Página informativa sobre el espacio y la exploración espacial: historia, misiones, tecnología y recursos." />
+      <!-- Fuentes -->
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+      <!-- Enlace al CSS externo -->
+      <link rel="stylesheet" href="style.css">
+    </head>
       <nav aria-label="Navegación principal">
         <a href="#sobre">Sobre</a>
         <a href="#misiones">Misiones</a>
@@ -51,9 +62,9 @@
     </header>
 
     <section class="hero" aria-hidden="false">
-      <div>
-        <h1 class="title">El espacio: nuestro próximo horizonte</h1>
-        <p>Desde los primeros satélites hasta las misiones actuales a Marte, la exploración espacial combina curiosidad científica y avance tecnológico. En esta página encontrarás una introducción clara y enlaces para profundizar.</p>
+      <div class="hero-content">
+        <h1 class="title"><span class="title-gradient">El espacio</span> — exploración, ciencia y futuro</h1>
+        <p class="subtitle">Un recorrido claro y visual por las misiones históricas y la tecnología que nos impulsa a conocer el cosmos. Aprende con secciones organizadas y recursos confiables.</p>
         <div class="toc">
           <a class="btn" href="#misiones">Ver misiones</a>
           <a class="btn" href="#galeria">Ver galería</a>
@@ -155,6 +166,19 @@
           <li><a class="anchor" href="https://www.spacex.com" target="_blank" rel="noopener">SpaceX</a> — información sobre lanzadores y proyectos comerciales.</li>
         </ul>
         <p class="small">Si quieres aprender más, explora los sitios anteriores y busca cursos de astronomía básica o astrofísica para comenzar.</p>
+      </section>
+
+      <!-- Tipografía y decisiones de estilo -->
+      <section id="tipografia" class="card" aria-labelledby="tipografia-h">
+        <h2 id="tipografia-h">Tipografía y estilo</h2>
+        <div class="accent-line" aria-hidden="true"></div>
+        <p class="small">Decisiones de estilo aplicadas en esta página:</p>
+        <ul class="small">
+          <li><strong>Familias:</strong> 'Poppins' para títulos y 'Inter' para párrafos, para contraste y legibilidad.</li>
+          <li><strong>Uso de mayúsculas:</strong> Evitamos forzar mayúsculas en títulos (se utiliza sentence case) para mantener legibilidad; las etiquetas pequeñas o <span class="kicker">kickers</span> usan mayúsculas y tracking reducido.</li>
+          <li><strong>Jerarquía visual:</strong> Títulos más grandes y pesos mayores, líneas de acento de color y sombras para separar secciones.</li>
+          <li><strong>Color y forma:</strong> Paleta con varios acentos (azul, violeta y verde) y formas sutiles en el hero para evitar monotonía.</li>
+        </ul>
       </section>
     </main>
 
