@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Espacio y Exploración Espacial</title>
+    <meta name="description" content="Página informativa sobre el espacio y la exploración espacial: historia, misiones, tecnología y recursos." />
+    <style>
+      :root{--bg:#081229;--card:#0f2438;--muted:#b6c2d1;--accent:#66d9ff}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#031022);color:#e6eef6;line-height:1.5}
+      header{padding:28px 18px;display:flex;align-items:center;justify-content:space-between}
+      .brand{display:flex;gap:12px;align-items:center}
+      .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#4b7cff);display:flex;align-items:center;justify-content:center;font-weight:700}
+      nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+      .hero{padding:36px 18px;display:grid;grid-template-columns:1fr;gap:20px}
+      .hero .title{font-size:clamp(1.6rem,3vw,2.6rem);margin:0}
+      .hero p{margin:0;color:var(--muted)}
+      main{max-width:1000px;margin:18px auto;padding:0 18px}
+      section.card{background:var(--card);padding:18px;border-radius:10px;margin-bottom:14px}
+      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+      .photo{width:100%;height:160px;object-fit:cover;border-radius:8px}
+      footer{padding:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+      .small{font-size:0.95rem;color:var(--muted)}
+      @media(min-width:900px){.hero{grid-template-columns:1fr 360px}}
+      .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#001322;border-radius:8px;text-decoration:none;font-weight:600}
+      .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+      a.anchor{color:var(--accent);text-decoration:none}
+      /* pequeñas mejoras de accesibilidad */
+      .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    </style>
+  </head>
+  <body>
+    <!-- Enlace para saltar directamente al contenido principal (accesibilidad) -->
+    <a class="visually-hidden" href="#main">Saltar al contenido</a>
+
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">EO</div>
+        <div>
+          <strong>Espacio & Exploración</strong>
+          <div class="small">Conoce el universo y las misiones que nos llevan más allá</div>
+        </div>
+      </div>
+      <nav aria-label="Navegación principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#misiones">Misiones</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#galeria">Galería</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-hidden="false">
+      <div>
+        <h1 class="title">El espacio: nuestro próximo horizonte</h1>
+        <p>Desde los primeros satélites hasta las misiones actuales a Marte, la exploración espacial combina curiosidad científica y avance tecnológico. En esta página encontrarás una introducción clara y enlaces para profundizar.</p>
+        <div class="toc">
+          <a class="btn" href="#misiones">Ver misiones</a>
+          <a class="btn" href="#galeria">Ver galería</a>
+        </div>
+      </div>
+      <aside class="card" aria-label="Resumen">
+        <h3>¿Por qué explorar?</h3>
+        <p class="small">Explorar el espacio nos permite responder preguntas fundamentales: ¿cómo se originó la vida? ¿qué recursos existen fuera de la Tierra? Además, impulsa tecnologías aplicables en medicina, comunicaciones y energía.</p>
+      </aside>
+    </section>
+
+    <main id="main">
+      <!-- Sección principal: qué es el espacio -->
+      <section id="sobre" class="card" aria-labelledby="sobre-h">
+        <h2 id="sobre-h">¿Qué es el espacio?</h2>
+        <p class="small">El espacio exterior es la región más allá de la atmósfera terrestre donde la influencia directa del aire es mínima. Está compuesto por vacío, radiación, cuerpos celestes (planetas, estrellas, cometas) y estructuras a gran escala (galaxias, cúmulos).</p>
+        <p class="small">Estudiar el espacio implica medir radiación, analizar composición química, mapear órbitas y observar fenómenos a distintas longitudes de onda (radio, infrarrojo, visible, rayos X).</p>
+      </section>
+
+      <!-- Historia: hechos clave con explicaciones -->
+      <section id="historia" class="card" aria-labelledby="historia-h">
+        <h2 id="historia-h">Historia breve</h2>
+        <div class="grid">
+          <article>
+            <h3>1957 — Sputnik</h3>
+            <p class="small">El lanzamiento del Sputnik 1 por la URSS fue el primer satélite artificial en orbitar la Tierra. Abrió la puerta a comunicaciones por satélite y estudios atmosféricos desde el espacio.</p>
+          </article>
+          <article>
+            <h3>1969 — Apolo 11</h3>
+            <p class="small">Neil Armstrong y Buzz Aldrin caminaron sobre la Luna. Esa misión demostró la capacidad humana para viajes tripulados más allá de la órbita terrestre baja.</p>
+          </article>
+          <article>
+            <h3>Robótica moderna</h3>
+            <p class="small">Sondas y rovers han permitido explorar planetas y lunas con detalle: medir condiciones, buscar signos de agua y realizar observaciones que serían imposibles desde la Tierra.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Misiones: lista con descripción breve y propósito -->
+      <section id="misiones" class="card" aria-labelledby="misiones-h">
+        <h2 id="misiones-h">Misiones destacadas y su contribución</h2>
+        <dl class="small">
+          <dt><strong>Voyager 1 y 2</strong></dt>
+          <dd>Enviadas para estudiar los planetas exteriores; hoy siguen transmitiendo datos desde el espacio interestelar.</dd>
+          <dt><strong>Hubble Space Telescope</strong></dt>
+          <dd>Telescopio en órbita que ha capturado imágenes profundas del universo, ayudando a medir la edad y la expansión del cosmos.</dd>
+          <dt><strong>Curiosity y Perseverance</strong></dt>
+          <dd>Rovers en Marte que analizan rocas y buscan evidencias de condiciones pasadas que pudieran haber sostenido vida microbiana.</dd>
+          <dt><strong>Artemis</strong></dt>
+          <dd>Programa que busca devolver humanos a la Luna y establecer capacidades para exploraciones más largas y sostenibles.</dd>
+        </dl>
+      </section>
+
+      <!-- Tecnología: explicación en bullets -->
+      <section id="tecnologia" class="card" aria-labelledby="tecnologia-h">
+        <h2 id="tecnologia-h">Tecnologías clave</h2>
+        <p class="small">A continuación se describen rápidamente las tecnologías que hacen posible la exploración:</p>
+        <ul class="small">
+          <li><strong>Cohetes:</strong> Proporcionan la energía inicial para salir de la gravedad terrestre.</li>
+          <li><strong>Sistemas de soporte vital:</strong> Mantienen temperatura, presión y oxígeno en misiones tripuladas.</li>
+          <li><strong>Sensores y cámaras:</strong> Recolectan datos científicos y permiten navegación y mapeo.</li>
+          <li><strong>Propulsión avanzada:</strong> Iónica y otras técnicas prometen viajes más eficientes a largo plazo.</li>
+        </ul>
+      </section>
+
+      <!-- Galería con pies claros -->
+      <section id="galeria" class="card" aria-labelledby="galeria-h">
+        <h2 id="galeria-h">Galería</h2>
+        <p class="small">Imágenes representativas del universo: nebulosas, planetas y actividad humana en el espacio.</p>
+        <div class="grid">
+          <figure>
+            <img class="photo" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200&auto=format&fit=crop&s=1" alt="Nebulosa colorida">
+            <figcaption class="small">Nebulosa brillante — regiones de formación estelar.</figcaption>
+          </figure>
+          <figure>
+            <img class="photo" src="https://images.unsplash.com/photo-1446776811954-7b2d8f1a5b33?q=80&w=1200&auto=format&fit=crop&s=2" alt="Planeta en primer plano">
+            <figcaption class="small">Imagen artística de un planeta — ilustración conceptual.</figcaption>
+          </figure>
+          <figure>
+            <img class="photo" src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=1200&auto=format&fit=crop&s=3" alt="Astronauta en actividad extravehicular">
+            <figcaption class="small">Astronauta durante actividad extravehicular.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Recursos ampliados con breve descripción de cada fuente -->
+      <section id="recursos" class="card" aria-labelledby="recursos-h">
+        <h2 id="recursos-h">Recursos y lectura recomendada</h2>
+        <ul class="small">
+          <li><a class="anchor" href="https://www.nasa.gov" target="_blank" rel="noopener">NASA</a> — noticias, misiones y recursos educativos.</li>
+          <li><a class="anchor" href="https://www.esa.int" target="_blank" rel="noopener">ESA</a> — la Agencia Espacial Europea, con material en varios idiomas.</li>
+          <li><a class="anchor" href="https://www.spacex.com" target="_blank" rel="noopener">SpaceX</a> — información sobre lanzadores y proyectos comerciales.</li>
+        </ul>
+        <p class="small">Si quieres aprender más, explora los sitios anteriores y busca cursos de astronomía básica o astrofísica para comenzar.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div>Creado como página de muestra sobre exploración espacial. Contenido en español.</div>
+      <div class="small">¿Quieres que traduzca esto al inglés o que añada más secciones? Dime qué prefieres.</div>
+    </footer>
+  </body>
+</html>
