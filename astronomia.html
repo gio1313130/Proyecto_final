@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Astronomía - Concepto de Ciencias Espaciales. Aprende sobre el universo fascinante.">
+    <title>Astronomía | ORBITA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html">Misiones</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="astronomia.html" class="active">Astronomía</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1>Conceptos de <span class="gradient">Astronomía</span></h1>
+            <p class="hero-subtitle">Entiende los fenómenos cósmicos que estudia la exploración espacial.</p>
+        </div>
+    </section>
+
+    <!-- CONCEPTO 1: EXOPLANETAS -->
+    <section class="container">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: calc(var(--spacing-unit) * 4); align-items: center; margin-bottom: calc(var(--spacing-unit) * 6);">
+            <div>
+                <h2>Exoplanetas</h2>
+                <p>Planetas que orbitan estrellas distintas al Sol. Hasta ahora hemos descubierto más de 5.000 exoplanetas, con estimaciones de billones más en el universo observable.</p>
+                <ul style="list-style: none; padding: 0; margin-top: calc(var(--spacing-unit) * 2);">
+                    <li style="padding: calc(var(--spacing-unit) * 1) 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <strong style="color: var(--accent-primary);">Métodos de Detección:</strong> Tránsitos, velocidad radial, astrometría, imágenes directas
+                    </li>
+                    <li style="padding: calc(var(--spacing-unit) * 1) 0;">
+                        <strong style="color: var(--accent-primary);">Importancia:</strong> Buscar planetas habitables, entender formación planetaria, detectar biosignaturas
+                    </li>
+                </ul>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(102, 217, 255, 0.1), rgba(255,255,255,0.02)); border: 1px solid rgba(102, 217, 255, 0.2); border-radius: 12px; padding: calc(var(--spacing-unit) * 2); text-align: center;">
+                <p style="font-size: 3rem; margin: 0;">🌍</p>
+                <p style="color: var(--accent-primary); font-weight: 700; margin: calc(var(--spacing-unit) * 1) 0 0;">5,000+</p>
+                <p style="margin: 0; color: var(--text-secondary);">Exoplanetas Descubiertos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCEPTO 2: AGUJEROS NEGROS -->
+    <section class="container">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: calc(var(--spacing-unit) * 4); align-items: center; margin-bottom: calc(var(--spacing-unit) * 6);">
+            <div style="background: linear-gradient(135deg, rgba(155, 99, 255, 0.1), rgba(255,255,255,0.02)); border: 1px solid rgba(155, 99, 255, 0.2); border-radius: 12px; padding: calc(var(--spacing-unit) * 2); text-align: center;">
+                <p style="font-size: 3rem; margin: 0;">⚫</p>
+                <p style="color: var(--accent-secondary); font-weight: 700; margin: calc(var(--spacing-unit) * 1) 0 0;">Infinito</p>
+                <p style="margin: 0; color: var(--text-secondary);">Densidad</p>
+            </div>
+            <div>
+                <h2>Agujeros Negros</h2>
+                <p>Regiones donde la gravedad es tan intensa que nada, ni la luz, puede escapar. Son laboratorios de física extrema.</p>
+                <div style="background: rgba(255,255,255,0.05); border-left: 4px solid var(--accent-secondary); padding: calc(var(--spacing-unit) * 2); border-radius: 8px; margin-top: calc(var(--spacing-unit) * 2);">
+                    <p style="margin: 0 0 calc(var(--spacing-unit) * 0.75); color: var(--accent-secondary); font-weight: 700;">¿Cómo se forman?</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Muerte de estrellas masivas o fusión en centros galácticos. Sagitario A* en nuestra galaxia tiene 4 millones de masas solares.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCEPTO 3: ONDAS GRAVITACIONALES -->
+    <section class="container">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: calc(var(--spacing-unit) * 4); align-items: center; margin-bottom: calc(var(--spacing-unit) * 6);">
+            <div>
+                <h2>Ondas Gravitacionales</h2>
+                <p>Ripples del espacio-tiempo causadas por eventos cósmicos violentos. Primera detección en 2015 de dos agujeros negros fusionándose.</p>
+                <p style="color: var(--text-secondary);">Predichas por Einstein en 1916, confirmadas experimentalmente 100 años después. Proporcionan nueva forma de observar el universo.</p>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(52, 224, 178, 0.1), rgba(255,255,255,0.02)); border: 1px solid rgba(52, 224, 178, 0.2); border-radius: 12px; padding: calc(var(--spacing-unit) * 2); text-align: center;">
+                <p style="font-size: 2.5rem; margin: 0;">〰️</p>
+                <p style="color: var(--accent-tertiary); font-weight: 700; margin: calc(var(--spacing-unit) * 1) 0 0;">Nuevos Descubrimientos</p>
+                <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">LIGO, Virgo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="container" style="background: linear-gradient(135deg, rgba(102, 217, 255, 0.05), rgba(155, 99, 255, 0.05)); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: calc(var(--spacing-unit) * 3); margin: calc(var(--spacing-unit) * 4) 0;">
+        <h2 style="text-align: center; margin-bottom: calc(var(--spacing-unit) * 3);">¿Cuánto Sabes de Astronomía?</h2>
+        <form id="astronomy-quiz" style="max-width: 600px; margin: 0 auto;">
+            <!-- Pregunta 1 -->
+            <div style="background: rgba(255,255,255,0.02); padding: calc(var(--spacing-unit) * 2); border-radius: 8px; margin-bottom: calc(var(--spacing-unit) * 2);" data-correct="a">
+                <p style="font-weight: 700; margin: 0 0 calc(var(--spacing-unit) * 1);">¿Cuál es la distancia a la estrella más cercana?</p>
+                <label style="display: block; padding: calc(var(--spacing-unit) * 0.5); cursor: pointer;">
+                    <input type="radio" name="q1" value="a" required style="margin-right: calc(var(--spacing-unit) * 0.75));"> 4.37 años luz
+                </label>
+                <label style="display: block; padding: calc(var(--spacing-unit) * 0.5); cursor: pointer;">
+                    <input type="radio" name="q1" value="b" style="margin-right: calc(var(--spacing-unit) * 0.75));"> 1.5 años luz
+                </label>
+                <label style="display: block; padding: calc(var(--spacing-unit) * 0.5); cursor: pointer;">
+                    <input type="radio" name="q1" value="c" style="margin-right: calc(var(--spacing-unit) * 0.75));"> 10 años luz
+                </label>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div style="background: rgba(255,255,255,0.02); padding: calc(var(--spacing-unit) * 2); border-radius: 8px; margin-bottom: calc(var(--spacing-unit) * 2);" data-correct="b">
+                <p style="font-weight: 700; margin: 0 0 calc(var(--spacing-unit) * 1);">¿Cuántos agujeros negros existen en el universo?</p>
+                <label style="display: block; padding: calc(var(--spacing-unit) * 0.5); cursor: pointer;">
+                    <input type="radio" name="q2" value="a" required style="margin-right: calc(var(--spacing-unit) * 0.75));"> Desconocido, pero billones
+                </label>
+                <label style="display: block; padding: calc(var(--spacing-unit) * 0.5); cursor: pointer;">
+                    <input type="radio" name="q2" value="b" style="margin-right: calc(var(--spacing-unit) * 0.75));"> Estimado: billones
+                </label>
+                <label style="display: block; padding: calc(var(--spacing-unit) * 0.5); cursor: pointer;">
+                    <input type="radio" name="q2" value="c" style="margin-right: calc(var(--spacing-unit) * 0.75));"> Solo 1000
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Respuestas</button>
+        </form>
+        <div id="quiz-result" style="margin-top: calc(var(--spacing-unit) * 2); text-align: center; display: none;"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa sobre exploración espacial.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="misiones.html">Misiones</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Explora</h3>
+                    <ul>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="timeline.html">Línea de Tiempo</a></li>
+                        <li><a href="about.html">Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA.</p>
+                <button class="back-to-top">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('astronomy-quiz').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let score = 0;
+            const questions = this.querySelectorAll('[data-correct]');
+            questions.forEach(q => {
+                const correct = q.getAttribute('data-correct');
+                const checked = q.querySelector(`input[value="${correct}"]:checked`);
+                if (checked) score++;
+            });
+            const percentage = Math.round((score / questions.length) * 100);
+            document.getElementById('quiz-result').innerHTML = `
+                <p style="font-size: 1.2rem; font-weight: 700;">Puntuación: ${score}/${questions.length}</p>
+                <p style="color: var(--accent-tertiary); font-weight: 700;">${percentage}% ¡Excepcional!</p>
+            `;
+            document.getElementById('quiz-result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

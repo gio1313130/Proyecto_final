@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactar con ORBITA">
+    <title>Contacto | ORBITA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html">Misiones</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta active">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1>Ponte en Contacto</h1>
+            <p class="hero-subtitle">Tenemos gusto en saber de ti. Escribe un mensaje y responderemos pronto.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <form id="contact-form" style="background: var(--card-background); padding: calc(var(--spacing-unit) * 3); border-radius: 12px; border: 1px solid rgba(102, 217, 255, 0.1);">
+                
+                <div style="margin-bottom: calc(var(--spacing-unit) * 2);">
+                    <label for="contact-name" style="display: block; margin-bottom: calc(var(--spacing-unit) * 0.5); font-weight: 600;">Nombre</label>
+                    <input type="text" id="contact-name" required placeholder="Tu nombre completo" style="width: 100%; padding: calc(var(--spacing-unit) * 1); border: 1px solid var(--border-color); border-radius: 8px; background: var(--secondary-background); color: var(--text-primary); font-family: var(--font-body); font-size: 1rem;">
+                </div>
+
+                <div style="margin-bottom: calc(var(--spacing-unit) * 2);">
+                    <label for="contact-email" style="display: block; margin-bottom: calc(var(--spacing-unit) * 0.5); font-weight: 600;">Email</label>
+                    <input type="email" id="contact-email" required placeholder="tu@email.com" style="width: 100%; padding: calc(var(--spacing-unit) * 1); border: 1px solid var(--border-color); border-radius: 8px; background: var(--secondary-background); color: var(--text-primary); font-family: var(--font-body); font-size: 1rem;">
+                    <small style="color: var(--text-tertiary); margin-top: calc(var(--spacing-unit) * 0.5); display: block;">Verificaremos tu email para enviar respuesta</small>
+                </div>
+
+                <div style="margin-bottom: calc(var(--spacing-unit) * 2);">
+                    <label for="contact-subject" style="display: block; margin-bottom: calc(var(--spacing-unit) * 0.5); font-weight: 600;">Asunto</label>
+                    <select id="contact-subject" required style="width: 100%; padding: calc(var(--spacing-unit) * 1); border: 1px solid var(--border-color); border-radius: 8px; background: var(--secondary-background); color: var(--text-primary); font-family: var(--font-body); font-size: 1rem;">
+                        <option value="">Selecciona un asunto</option>
+                        <option value="pregunta">Pregunta</option>
+                        <option value="retroalimentacion">Retroalimentación</option>
+                        <option value="bug">Reportar un Error</option>
+                        <option value="feature">Sugerencia de Función</option>
+                        <option value="colaboracion">Colaboración</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: calc(var(--spacing-unit) * 2);">
+                    <label for="contact-message" style="display: block; margin-bottom: calc(var(--spacing-unit) * 0.5); font-weight: 600;">Mensaje</label>
+                    <textarea id="contact-message" required placeholder="Cuéntanos qué te gustaría saber..." rows="6" style="width: 100%; padding: calc(var(--spacing-unit) * 1); border: 1px solid var(--border-color); border-radius: 8px; background: var(--secondary-background); color: var(--text-primary); font-family: var(--font-body); font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: calc(var(--spacing-unit) * 1.25);">Enviar Mensaje</button>
+
+                <div id="contact-success" style="display: none; margin-top: calc(var(--spacing-unit) * 2); padding: calc(var(--spacing-unit) * 1.5); background: rgba(52, 224, 178, 0.1); border: 1px solid var(--accent-tertiary); border-radius: 8px; color: var(--accent-tertiary);">
+                    ✓ Mensaje enviado correctamente. Nos pondremos en contacto pronto.
+                </div>
+
+                <div id="contact-error" style="display: none; margin-top: calc(var(--spacing-unit) * 2); padding: calc(var(--spacing-unit) * 1.5); background: rgba(255, 107, 107, 0.1); border: 1px solid var(--accent-warm); border-radius: 8px; color: var(--accent-warm);">
+                    Error en la validación. Por favor, revisa tus datos.
+                </div>
+            </form>
+
+            <div style="margin-top: calc(var(--spacing-unit) * 4); padding-top: calc(var(--spacing-unit) * 3); border-top: 1px solid rgba(102, 217, 255, 0.1);">
+                <h3>También puedes contactarnos en:</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2);">
+                    <div class="card">
+                        <h4 style="margin-top: 0; color: var(--accent-primary);">Email</h4>
+                        <p style="color: var(--text-secondary);">contacto@orbita.edu</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="margin-top: 0; color: var(--accent-primary);">Redes Sociales</h4>
+                        <p style="color: var(--text-secondary);">@OrbItaPlatform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA.</p>
+                <button class="back-to-top">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value.trim();
+            
+            const successDiv = document.getElementById('contact-success');
+            const errorDiv = document.getElementById('contact-error');
+            
+            successDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            
+            // Validación
+            if (!name || !email || !subject || !message) {
+                errorDiv.textContent = '⚠ Por favor, completa todos los campos.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                errorDiv.textContent = '⚠ Por favor, ingresa un email válido.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (message.length < 10) {
+                errorDiv.textContent = '⚠ El mensaje debe tener al menos 10 caracteres.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            // Simulamos envío (en producción, sería a un backend)
+            successDiv.style.display = 'block';
+            this.reset();
+            
+            // Limpiamos el mensaje después de 5 segundos
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

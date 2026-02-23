@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Misiones Espaciales - ORBITA. Explora el catálogo completo de misiones históricas.">
+    <title>Misiones | ORBITA – Exploración Espacial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html" class="active">Misiones</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="astronomia.html">Astronomía</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta" aria-label="Ir a contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="container" style="padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2);">
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <span>Misiones</span>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1>Catálogo de <span class="gradient">Misiones Espaciales</span></h1>
+            <p class="hero-subtitle">Explora todas las expediciones históricas que han moldeado nuestra comprensión del universo.</p>
+        </div>
+    </section>
+
+    <!-- FILTROS Y BÚSQUEDA -->
+    <section class="container">
+        <div style="margin-bottom: calc(var(--spacing-unit) * 2);">
+            <h3 style="margin-bottom: calc(var(--spacing-unit) * 1.5);">Filtrar por Destino</h3>
+            <div class="chips-container">
+                <button class="chip active" data-filter="all">Todas</button>
+                <button class="chip" data-filter="luna">🌙 Luna</button>
+                <button class="chip" data-filter="marte">🔴 Marte</button>
+                <button class="chip" data-filter="orbita">🛰️ Órbita</button>
+                <button class="chip" data-filter="interestelar">✨ Interestelar</button>
+                <button class="chip" data-filter="telescopio">🔭 Telescopios</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="search-missions" placeholder="Buscar misión por nombre..." style="width: 100%; max-width: 500px;">
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE MISIONES -->
+    <section class="container">
+        <div class="grid-3">
+            <!-- APOLLO 11 -->
+            <div class="card" data-category="luna" data-search="apollo 11 1969 luna humanos armstrong">
+                <h3>🌙 Apollo 11</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">1969 • Tripulada</p>
+                <p>Primera misión que llevó humanos a la Luna. Neil Armstrong y Buzz Aldrin realizaron el legendario paseo lunar.</p>
+                <a href="mision-detalle.html?id=apollo-11" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- VOYAGER 1 -->
+            <div class="card" data-category="interestelar" data-search="voyager 1 sonda robótica sistema solar">
+                <h3>🛸 Voyager 1</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">1977 • Robótica</p>
+                <p>Sonda más lejana de la humanidad. Aún transmite datos desde el espacio interestelar.</p>
+                <a href="mision-detalle.html?id=voyager-1" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- VOYAGER 2 -->
+            <div class="card" data-category="interestelar" data-search="voyager 2 sonda planetas">
+                <h3>🛸 Voyager 2</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">1977 • Robótica</p>
+                <p>Exploró todos los gigantes gaseosos. Única sonda en visitar Neptuno.</p>
+                <a href="mision-detalle.html?id=voyager-2" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- HUBBLE -->
+            <div class="card" data-category="telescopio" data-search="hubble telescopio espacial observatorio">
+                <h3>🔭 Telescopio Hubble</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">1990 • Observatorio</p>
+                <p>Revolucionó la astronomía. Descubrió miles de exoplanetas y desveló la expansión del universo.</p>
+                <a href="mision-detalle.html?id=hubble" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- MARS ROVERS -->
+            <div class="card" data-category="marte" data-search="mars curiosity perseverance rover planeta rojo">
+                <h3>🚗 Mars Rovers</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">2012+ • Robótica</p>
+                <p>Curiosity y Perseverance exploran Marte. Buscan agua y signos de vida ancestral.</p>
+                <a href="mision-detalle.html?id=mars-rovers" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- JAMES WEBB -->
+            <div class="card" data-category="telescopio" data-search="james webb jwst infrarrojo nasa esa">
+                <h3>✨ Telescopio JWST</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">2021 • Observatorio</p>
+                <p>El observatorio más avanzado jamás construido. Observa el universo primitivo infrarrojo.</p>
+                <a href="mision-detalle.html?id=jwst" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- ISS -->
+            <div class="card" data-category="orbita" data-search="iss estación espacial internacional tripulada">
+                <h3>🛰️ Estación Espacial Internacional</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">1998+ • Tripulada</p>
+                <p>Laboratorio orbital donde astronautas de múltiples países trabajan en investigación científica continuamente.</p>
+                <a href="mision-detalle.html?id=iss" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- NEW HORIZONS -->
+            <div class="card" data-category="interestelar" data-search="new horizons plutón cuerpo negro">
+                <h3>🌟 New Horizons</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">2006 • Robótica</p>
+                <p>Única nave que visitó Plutón. Reveló detalles sorprendentes del planeta enano más icónico.</p>
+                <a href="mision-detalle.html?id=new-horizons" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+
+            <!-- ARTEMIS -->
+            <div class="card" data-category="luna" data-search="artemis próxima misión luna tripulada nasa">
+                <h3>🚀 Artemis</h3>
+                <p style="font-size: 0.9rem; color: var(--accent-primary); font-weight: 700; margin-bottom: calc(var(--spacing-unit));">2025+ • Tripulada</p>
+                <p>Programa para llevar humanos nuevamente a la Luna. Próximo paso hacia exploración de Marte.</p>
+                <a href="mision-detalle.html?id=artemis" class="btn btn-small btn-secondary" style="margin-top: auto;">Ver Detalle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa sobre exploración espacial.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="misiones.html">Misiones</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="astronomia.html">Astronomía</a></li>
+                        <li><a href="timeline.html">Línea de Tiempo</a></li>
+                        <li><a href="about.html">Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA. Todos los derechos reservados.</p>
+                <button class="back-to-top" aria-label="Volver al inicio">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Filtrado de misiones
+        const chips = document.querySelectorAll('.chips-container .chip');
+        const cards = document.querySelectorAll('.card[data-category]');
+        const searchInput = document.getElementById('search-missions');
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', function() {
+                chips.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                filterMissions(filter);
+            });
+        });
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            cards.forEach(card => {
+                const searchText = card.getAttribute('data-search').toLowerCase();
+                card.style.display = searchText.includes(query) ? 'grid' : 'none';
+            });
+        });
+
+        function filterMissions(category) {
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'grid';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

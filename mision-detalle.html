@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalle de Misión | ORBITA – Exploración Espacial">
+    <title>Detalle de Misión | ORBITA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html" class="active">Misiones</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="astronomia.html">Astronomía</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="container" style="padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2);">
+        <div class="breadcrumb">
+            <a href="index.html">Inicio</a>
+            <span>/</span>
+            <a href="misiones.html">Misiones</a>
+            <span>/</span>
+            <span id="breadcrumb-title">Visita</span>
+        </div>
+    </div>
+
+    <!-- HERO CON DETALLES -->
+    <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, rgba(102, 217, 255, 0.05), rgba(155, 99, 255, 0.05));">
+        <div class="hero-content">
+            <h1 id="mission-title">Cargando...</h1>
+            <p class="hero-subtitle" id="mission-description">Aguarda...</p>
+            <div style="margin-top: calc(var(--spacing-unit) * 2); display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(var(--spacing-unit) * 2); max-width: 600px;">
+                <div style="background: rgba(255,255,255,0.05); padding: calc(var(--spacing-unit) * 1.5); border-radius: 8px;">
+                    <p style="color: var(--text-tertiary); font-size: 0.85rem; margin: 0;">Año</p>
+                    <p style="color: var(--accent-primary); font-weight: 700; font-size: 1.3rem; margin: calc(var(--spacing-unit) * 0.5) 0 0;">
+                        <span id="mission-year">—</span>
+                    </p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: calc(var(--spacing-unit) * 1.5); border-radius: 8px;">
+                    <p style="color: var(--text-tertiary); font-size: 0.85rem; margin: 0;">Tipo</p>
+                    <p style="color: var(--accent-tertiary); font-weight: 700; font-size: 1.3rem; margin: calc(var(--spacing-unit) * 0.5) 0 0;">
+                        <span id="mission-type">—</span>
+                    </p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: calc(var(--spacing-unit) * 1.5); border-radius: 8px;">
+                    <p style="color: var(--text-tertiary); font-size: 0.85rem; margin: 0;">Estado</p>
+                    <p style="color: var(--accent-secondary); font-weight: 700; font-size: 1.3rem; margin: calc(var(--spacing-unit) * 0.5) 0 0;">
+                        <span id="mission-status">—</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="container">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: calc(var(--spacing-unit) * 4);">
+            <!-- CONTENIDO IZQUIERDO -->
+            <div>
+                <h2 style="margin-bottom: calc(var(--spacing-unit) * 2);">Objetivos Principales</h2>
+                <div id="mission-objectives" class="text-muted">Cargando...</div>
+
+                <h2 style="margin: calc(var(--spacing-unit) * 3) 0 calc(var(--spacing-unit) * 2);">Hitos Clave</h3>
+                <ul id="mission-milestones" style="list-style: none; padding: 0;">
+                    <li class="skeleton" style="height: 40px; margin-bottom: calc(var(--spacing-unit) * 1);"></li>
+                </ul>
+
+                <h2 style="margin: calc(var(--spacing-unit) * 3) 0 calc(var(--spacing-unit) * 2);">Impacto Científico</h3>
+                <div id="mission-impact" class="text-muted">Cargando...</div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside>
+                <div class="card">
+                    <h3 style="margin-top: 0;">Información Rápida</h3>
+                    <div style="display: grid; gap: calc(var(--spacing-unit) * 1.5);">
+                        <div>
+                            <p style="color: var(--text-tertiary); font-size: 0.85rem; margin: 0 0 calc(var(--spacing-unit) * 0.25);">Agencia</p>
+                            <p style="font-weight: 700; margin: 0;" id="mission-agency">NASA</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-tertiary); font-size: 0.85rem; margin: 0 0 calc(var(--spacing-unit) * 0.25);">Duración</p>
+                            <p style="font-weight: 700; margin: 0;" id="mission-duration">Continua</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-tertiary); font-size: 0.85rem; margin: 0 0 calc(var(--spacing-unit) * 0.25);">Destino</p>
+                            <p style="font-weight: 700; margin: 0;" id="mission-destination">Espacio</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: calc(var(--spacing-unit) * 2);">
+                    <h3 style="margin-top: 0;">Más Misiones</h3>
+                    <div style="display: flex; gap: calc(var(--spacing-unit) * 1); margin-top: calc(var(--spacing-unit) * 1.5);">
+                        <a href="mision-detalle.html?id=apollo-11" class="btn btn-secondary btn-small">Apollo 11</a>
+                        <a href="mision-detalle.html?id=voyager-1" class="btn btn-secondary btn-small">Voyager 1</a>
+                    </div>
+                    <div style="display: flex; gap: calc(var(--spacing-unit) * 1); margin-top: calc(var(--spacing-unit) * 1);">
+                        <a href="misiones.html" class="btn btn-primary btn-small">Ver Todas</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container" style="text-align: center; padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 2);">
+        <h2>Quieres Aprender Más</h2>
+        <p style="color: var(--text-secondary); margin-bottom: calc(var(--spacing-unit) * 2);">Explora artículos, videos y documentación sobre esta misión.</p>
+        <a href="blog.html" class="btn btn-primary">Ir al Blog</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa sobre exploración espacial.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="misiones.html">Misiones</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Referencias</h3>
+                    <ul>
+                        <li><a href="https://www.nasa.gov" target="_blank">NASA</a></li>
+                        <li><a href="https://www.esa.int" target="_blank">ESA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA.</p>
+                <button class="back-to-top">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Base de datos de misiones
+        const missions = {
+            'apollo-11': {
+                title: '🌙 Apollo 11',
+                year: '1969',
+                type: 'Tripulada',
+                status: 'Completada',
+                agency: 'NASA',
+                duration: '8 días',
+                destination: 'Luna',
+                description: 'La primera misión en llevar humanos a la Luna. Neil Armstrong se convirtió en el primer ser humano en caminar sobre la superficie lunar.',
+                objectives: 'Demostrar la capacidad humana de llegar a la Luna de forma segura, realizar investigación científica lunar y recolectar muestras.',
+                milestones: [
+                    '20 Jul 1969: Apolo 11 entra en órbita lunar',
+                    '21 Jul 1969: El módulo lunar toca la superficie',
+                    '21 Jul 1969: Neil Armstrong camina en la Luna',
+                    '22 Jul 1969: Regreso a la órbita terrestre'
+                ],
+                impact: 'Considerado uno de los mayores logros humanos. Abrió la puerta a futuras exploraciones lunares y demostró el éxito del programa espacial estadounidense.'
+            },
+            'voyager-1': {
+                title: '🛸 Voyager 1',
+                year: '1977',
+                type: 'Robótica',
+                status: 'Activa',
+                agency: 'NASA',
+                duration: '47+ años',
+                destination: 'Espacio Interestelar',
+                description: 'La sonda más lejana de la humanidad, ha viajado fuera del sistema solar y continúa transmitiendo datos',
+                objectives: 'Estudiar Júpiter y Saturno, explorar los límites del sistema solar y transmitir mensajes humanos al universo',
+                milestones: [
+                    'Ago 1981: Sobrevuela Saturno',
+                    'Jun 1983: Cruza la órbita de Neptuno',
+                    '2012: Entra al espacio interestelar',
+                    'Hoy: A 24.5 mil millones de km de la Tierra'
+                ],
+                impact: 'Revolucionó nuestro conocimiento de los gigantes gaseosos. El disco dorado que lleva datos de la civilización humana la hace un símbolo de nuestro deseo de contactar con civilizaciones extraterrestres.'
+            },
+            'voyager-2': {
+                title: '🛸 Voyager 2',
+                year: '1977',
+                type: 'Robótica',
+                status: 'Activa',
+                agency: 'NASA',
+                duration: '47+ años',
+                destination: 'Espacio Interestelar',
+                description: 'Gemela de Voyager 1, exploró todos los gigantes gaseosos del sistema solar',
+                objectives: 'Visitar Júpiter, Saturno, Urano y Neptuno. Única sonda en alcanzar los últimos planetas',
+                milestones: [
+                    'Jul 1979: Sobrevuela Júpiter',
+                    'Ago 1981: Sobrevuela Saturno',
+                    'Ene 1986: Descubre lunas de Urano',
+                    'Ago 1989: Única nave en Neptuno'
+                ],
+                impact: 'Proporcionó imágenes detalladas de los gigantes gaseosos y sus lunas. Descubrió nuevos anillos y fenómenos atmosféricos desconocidos.'
+            },
+            'hubble': {
+                title: '🔭 Telescopio Hubble',
+                year: '1990',
+                type: 'Observatorio',
+                status: 'Activo',
+                agency: 'NASA / ESA',
+                duration: '34+ años',
+                destination: 'Órbita Terrestre Baja',
+                description: 'El observatorio espacial más famoso del mundo, ha revolucionado la astronomía moderna',
+                objectives: 'Observar el universo en energías ópticas, buscar galaxias distantes, analizar supernovas y medir la expansión del universo',
+                milestones: [
+                    'Abr 1990: Se descubre defecto óptico',
+                    'Dic 1993: Reparación exitosa en el espacio',
+                    '1995: Observa galaxias a miles de millones de años luz',
+                    'Hoy: Continúa revolucionando la astronomía'
+                ],
+                impact: 'Descubrió que el universo se expande aceleradamente. Reveló la existencia de agujeros negros supermasivos. Fotografió el universo primitivo.'
+            },
+            'mars-rovers': {
+                title: '🚗 Mars Rovers',
+                year: '2012+',
+                type: 'Robótica',
+                status: 'Activa',
+                agency: 'NASA',
+                duration: 'Continua',
+                destination: 'Marte',
+                description: 'Curiosity y Perseverance, laboratorios móviles que exploran el Planeta Rojo',
+                objectives: 'Buscar agua, estudiar la geología marciana, buscar signos de vida ancestral, preparar para misiones humanas',
+                milestones: [
+                    'Ago 2012: Curiosity se posiciona en Gale Crater',
+                    'Feb 2021: Perseverance y Ingenuity llegan a Jezero Crater',
+                    '2023: Descubrimiento de moléculas orgánicas',
+                    'Hoy: Exploración activa continua'
+                ],
+                impact: 'Demostró evidencia de agua pasada en Marte. Mediciones de radiación para futuras misiones humanas. Primer helicóptero a operar en otro planeta.'
+            },
+            'jwst': {
+                title: '✨ Telescopio James Webb',
+                year: '2021',
+                type: 'Observatorio',
+                status: 'Activo',
+                agency: 'NASA / ESA / CSA',
+                duration: '10+ años',
+                destination: 'Punto de Lagrange 2',
+                description: 'El observatorio infrarrojo más avanzado jamás construido. Observa el universo como era hace 13.6 mil millones de años',
+                objectives: 'Ver el universo primitivo, estudiar formación de galaxias, analizar atmósferas de exoplanetas, buscar biosignaturas',
+                milestones: [
+                    'Dic 2021: Lanzamiento exitoso',
+                    'Jul 2022: Primeras imágenes espectaculares',
+                    'Dic 2022: Imagen del campo profundo',
+                    'Actualidad: Descubrimientos continos'
+                ],
+                impact: 'Ha revolucionado la cosmología observacional. Descubrió galaxias más antiguas que lo previsto. Detecta atmósferas de exoplanetas lejanos.'
+            },
+            'iss': {
+                title: '🛰️ Estación Espacial Internacional',
+                year: '1998+',
+                type: 'Tripulada',
+                status: 'Activa',
+                agency: 'NASA / Roscosmos / ESA / JAXA',
+                duration: '25+ años',
+                destination: 'Órbita Terrestre Baja',
+                description: 'Laboratorio orbital donde científicos de múltiples naciones trabajan continuamente',
+                objectives: 'Investigación científica, pruebas de tecnología en microgravedad, preparación para misiones humanas a largo plazo',
+                milestones: [
+                    'Nov 1998: Primer módulo lanzado',
+                    '2000: Ocupación permanente inicia',
+                    '2011: Se completa la construcción',
+                    'Hoy: Continúa con nuevas investigaciones'
+                ],
+                impact: 'Centro de investigación en microgravedad. Demuestra capacidad de cooperación internacional. Base vital para futuras exploraciones.'
+            },
+            'new-horizons': {
+                title: '🌟 New Horizons',
+                year: '2006',
+                type: 'Robótica',
+                status: 'Activa',
+                agency: 'NASA',
+                duration: '18+ años',
+                destination: 'Cinturón de Kuiper',
+                description: 'Primera nave en sobrevolar Plutón, revelando sorpresas del planeta enano más famoso',
+                objectives: 'Estudiar Plutón y sus lunas, explorar objetos del cinturón de Kuiper, entender la formación del sistema solar',
+                milestones: [
+                    'Ene 2007: Sobrevuela Júpiter',
+                    'Jul 2015: Encuentra Plutón y Caronte',
+                    '2019: Visita asteroide Arrokoth',
+                    'Hoy: Continúa hacia el espacio interestelar'
+                ],
+                impact: 'Mostró que Plutón es un mundo geológicamente complejo. Descubrió montañas de hielo y volcanes de nitrógeno. Redefinió nuestra visión de mundos helados.'
+            },
+            'artemis': {
+                title: '🚀 Artemis',
+                year: '2025+',
+                type: 'Tripulada',
+                status: 'Próxima',
+                agency: 'NASA',
+                duration: 'Múltiples misiones',
+                destination: 'Luna / Marte',
+                description: 'Programa para llevar humanos nuevamente a la Luna y establecer presencia sostenible',
+                objectives: 'Alunizar cerca de los polos lunares, establecer bases, usar la Luna como puente para Marte',
+                milestones: [
+                    '2025: Artemis II - Sobrevuelo lunar tripulado',
+                    '2026: Artemis III - Alunizaje',
+                    '2030+: Bases lunares permanentes',
+                    '2030+: Preparación para misiones a Marte'
+                ],
+                impact: 'Reanudará exploración tripulada lunar después de 50 años. Incluirá primera mujer astronauta en la Luna. Abrirá camino a Marte.'
+            }
+        };
+
+        // Cargar misión según parámetro URL
+        const params = new URLSearchParams(window.location.search);
+        const missionId = params.get('id') || 'apollo-11';
+        const mission = missions[missionId];
+
+        if (mission) {
+            document.getElementById('mission-title').textContent = mission.title;
+            document.getElementById('mission-description').textContent = mission.description;
+            document.getElementById('mission-year').textContent = mission.year;
+            document.getElementById('mission-type').textContent = mission.type;
+            document.getElementById('mission-status').textContent = mission.status;
+            document.getElementById('mission-agency').textContent = mission.agency;
+            document.getElementById('mission-duration').textContent = mission.duration;
+            document.getElementById('mission-destination').textContent = mission.destination;
+            document.getElementById('mission-objectives').innerHTML = `<p>${mission.objectives}</p>`;
+            document.getElementById('mission-impact').innerHTML = `<p>${mission.impact}</p>`;
+            document.getElementById('breadcrumb-title').textContent = mission.title.replace(/[🌙🛸🔭🚗✨🛰️🌟🚀]/g, '').trim();
+
+            // Cargar hitos
+            const milestonesList = document.getElementById('mission-milestones');
+            milestonesList.innerHTML = mission.milestones.map(m => `
+                <li style="padding: calc(var(--spacing-unit) * 1); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <p style="margin: 0; color: var(--accent-primary); font-weight: 700; font-size: 0.9rem;">${m.split(':')[0].trim()}</p>
+                    <p style="margin: calc(var(--spacing-unit) * 0.5) 0 0; color: var(--text-secondary);">${m.split(':')[1]?.trim() || ''}</p>
+                </li>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

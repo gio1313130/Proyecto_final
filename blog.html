@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog de Exploración Espacial | ORBITA">
+    <title>Blog | ORBITA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html">Misiones</a></li>
+                <li><a href="tecnologia.html">Tecnología</a></li>
+                <li><a href="astronomia.html">Astronomía</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1>Blog ORBITA</h1>
+            <p class="hero-subtitle">Artículos, análisis y noticias sobre exploración espacial</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div style="margin-bottom: calc(var(--spacing-unit) * 3);">
+            <h3>Categorías</h3>
+            <div class="chips-container">
+                <button class="chip active" onclick="filterBlog('all', event)">Todos</button>
+                <button class="chip" onclick="filterBlog('ciencia', event)">Ciencia</button>
+                <button class="chip" onclick="filterBlog('tecnologia', event)">Tecnología</button>
+                <button class="chip" onclick="filterBlog('exploracion', event)">Exploración</button>
+            </div>
+        </div>
+
+        <div class="grid-2" id="blog-grid">
+            <!-- Artículo 1 -->
+            <article class="card" data-category="ciencia">
+                <h3>Exoplanetas Potencialmente Habitables</h3>
+                <p style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; margin: calc(var(--spacing-unit) * 0.5) 0;">15 Feb 2024 • Lectura: 5 min</p>
+                <p>El descubrimiento de Kepler-452b abre preguntas sobre vida extraterrestre. Análisis de JWST revela biosignaturas potenciales.</p>
+                <a href="post.html?id=exoplanetas" class="btn btn-small btn-secondary">Leer Artículo</a>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article class="card" data-category="tecnologia">
+                <h3>Cohetes Reutilizables: El Futuro</h3>
+                <p style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; margin: calc(var(--spacing-unit) * 0.5) 0;">12 Feb 2024 • Lectura: 7 min</p>
+                <p>SpaceX logra recuperación de 200 Falcon 9s. El costo de acceso al espacio se reduce exponencialmente.</p>
+                <a href="post.html?id=cohetes" class="btn btn-small btn-secondary">Leer Artículo</a>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article class="card" data-category="exploracion">
+                <h3>Artemis II: Vuelta a la Luna</h3>
+                <p style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; margin: calc(var(--spacing-unit) * 0.5) 0;">08 Feb 2024 • Lectura: 6 min</p>
+                <p>Primeros pasos para el retorno humano. Conoce los objetivos de la misión del 2025.</p>
+                <a href="post.html?id=artemis" class="btn btn-small btn-secondary">Leer Artículo</a>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article class="card" data-category="ciencia">
+                <h3>Agujeros Negros: Sombras del Universo</h3>
+                <p style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; margin: calc(var(--spacing-unit) * 0.5) 0;">05 Feb 2024 • Lectura: 8 min</p>
+                <p>El Telescopio del Horizonte de Sucesos fotografía agujeros negros. Imágenes que desafían la física clásica.</p>
+                <a href="post.html?id=agujeros" class="btn btn-small btn-secondary">Leer Artículo</a>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article class="card" data-category="tecnologia">
+                <h3>JWST: Observando el Universo Primitivo</h3>
+                <p style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; margin: calc(var(--spacing-unit) * 0.5) 0;">02 Feb 2024 • Lectura: 9 min</p>
+                <p>Imágenes infrarojas revelan galaxias más antiguas de lo previsto. El JWST redefine la cosmología.</p>
+                <a href="post.html?id=jwst" class="btn btn-small btn-secondary">Leer Artículo</a>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article class="card" data-category="exploracion">
+                <h3>Marte: Preparación para Colonias</h3>
+                <p style="color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; margin: calc(var(--spacing-unit) * 0.5) 0;">30 Ene 2024 • Lectura: 10 min</p>
+                <p>Perseverance descubre depósitos de agua. Análisis de futuras bases humanas en el Planeta Rojo.</p>
+                <a href="post.html?id=marte" class="btn btn-small btn-secondary">Leer Artículo</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="misiones.html">Misiones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA.</p>
+                <button class="back-to-top">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        function filterBlog(category, event) {
+            const cards = document.querySelectorAll('[data-category]');
+            const chips = document.querySelectorAll('.chip');
+            
+            chips.forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

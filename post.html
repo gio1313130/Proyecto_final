@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artículos sobre exploración espacial">
+    <title>Artículo | ORBITA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html">Misiones</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta">Contacto</a>
+        </div>
+    </nav>
+
+    <div id="breadcrumbs" class="breadcrumbs">
+        <a href="index.html">Inicio</a>
+        <span class="separator">/</span>
+        <a href="blog.html">Blog</a>
+        <span class="separator">/</span>
+        <span id="breadcrumb-title">Artículo</span>
+    </div>
+
+    <article>
+        <div id="article-hero" class="hero" style="min-height: 60vh; background: var(--secondary-background);">
+            <div class="hero-gradient"></div>
+            <div class="hero-content" style="max-width: 800px;">
+                <h1 id="article-title">Título del Artículo</h1>
+                <div style="display: flex; gap: calc(var(--spacing-unit) * 1); margin-top: calc(var(--spacing-unit) * 2); flex-wrap: wrap; align-items: center;">
+                    <span id="article-category" class="chip">Categoría</span>
+                    <span style="color: var(--text-tertiary);">|</span>
+                    <time id="article-date" style="color: var(--text-secondary);">Fecha</time>
+                    <span style="color: var(--text-tertiary);">|</span>
+                    <span id="article-reading-time" style="color: var(--text-secondary);">Lectura</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 0; display: grid; grid-template-columns: 1fr 300px; gap: calc(var(--spacing-unit) * 3); max-width: 1000px;">
+            <main>
+                <div id="article-content" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary);">
+                    <!-- Contenido dinámico aquí -->
+                </div>
+
+                <div style="margin-top: calc(var(--spacing-unit) * 4); padding-top: calc(var(--spacing-unit) * 3); border-top: 1px solid rgba(102, 217, 255, 0.1);">
+                    <h3>Artículos Relacionados</h3>
+                    <div id="related-articles" style="display: grid; gap: calc(var(--spacing-unit) * 2); margin-top: calc(var(--spacing-unit) * 2);">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+            </main>
+
+            <aside>
+                <div class="card" style="position: sticky; top: calc(var(--spacing-unit) * 10);">
+                    <h4 style="margin-top: 0; color: var(--accent-primary);">En este artículo</h4>
+                    <nav id="toc" style="font-size: 0.95rem;">
+                        <!-- Se generará automáticamente desde h2/h3 -->
+                    </nav>
+                </div>
+            </aside>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA.</p>
+                <button class="back-to-top">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Base de datos de artículos
+        const articles = {
+            'exoplanetas': {
+                title: 'Los Exoplanetas: Mundos Más Allá del Sistema Solar',
+                category: 'Ciencia',
+                date: '2024-01-15',
+                author: 'Dr. Carlos López',
+                readingTime: '8 min',
+                featured_image: 'https://via.placeholder.com/1200x400?text=Exoplanetas',
+                excerpt: 'Descubre cómo los astrónomos detectan y estudian planetas orbitan alrededor de otras estrellas.',
+                content: `
+                    <h2>¿Qué son los exoplanetas?</h2>
+                    <p>Los exoplanetas son mundos que orbitan alrededor de estrellas fuera de nuestro sistema solar. Desde el descubrimiento del primer exoplaneta en 1995, hemos encontrado más de 5,000 exoplanetas confirmados.</p>
+                    
+                    <h2>Métodos de detección</h2>
+                    <p><strong>Método del tránsito:</strong> Observamos cómo la luz de una estrella disminuye cuando un planeta pasa frente a ella.</p>
+                    <p><strong>Método de velocidad radial:</strong> Detectamos el "tambaleo" gravitacional de la estrella causado por el planeta.</p>
+                    <p><strong>Imágenes directas:</strong> En raros casos, podemos fotografiar el planeta directamente.</p>
+                    
+                    <h2>Tipos de exoplanetas</h2>
+                    <p><strong>Júpiteres calientes:</strong> Gigantes gaseosos muy cercanos a sus estrellas.</p>
+                    <p><strong>Súper-Tierras:</strong> Planetas entre el tamaño de la Tierra y Neptuno.</p>
+                    <p><strong>Planetas tipo Tierra:</strong> Mundos rocosos potencialmente habitables en la zona habitable.</p>
+                    
+                    <h2>Implicaciones para encontrar vida</h2>
+                    <p>El descubrimiento de exoplanetas en la zona habitable de sus estrellas (donde el agua líquida podría existir) ha revolucionado nuestra búsqueda de vida extraterrestre. Misiones como el James Webb Space Telescope ahora pueden analizar las atmósferas de estos mundos lejanos en busca de señales de vida.</p>
+                `
+            },
+            'cohetes': {
+                title: 'Tecnología de Cohetes Reutilizables: El Futuro del Espacio',
+                category: 'Tecnología',
+                date: '2024-01-10',
+                author: 'Ing. María González',
+                readingTime: '10 min',
+                featured_image: 'https://via.placeholder.com/1200x400?text=Coetes',
+                excerpt: 'Cómo SpaceX revolucionó la industria espacial con los cohetes reutilizables.',
+                content: `
+                    <h2>El problema del costo espacial</h2>
+                    <p>Históricamente, los cohetes espaciales eran completamente desechables. Después de una única misión, los costosos componentes caían al océano o se quemaban en la atmósfera. Esto hacía que el acceso al espacio fuera prohibitivamente caro.</p>
+                    
+                    <h2>Revolución de los Falcons</h2>
+                    <p>SpaceX cambió el juego con el Falcon 9, capaz de aterrizar verticalmente su etapa de propulsores para reutilización. Esto ha reducido dramáticamente el costo de lanzamientos espaciales.</p>
+                    
+                    <h2>Ventajas de la reutilización</h2>
+                    <p><strong>Reducción de costos:</strong> De $65,000/kg a menos de $1,500/kg.</p>
+                    <p><strong>Mayor frecuencia:</strong> Más lanzamientos comerciales posibles.</p>
+                    <p><strong>Sostenibilidad:</strong> Menos residuos espaciales.</p>
+                    
+                    <h2>El futuro: Starship</h2>
+                    <p>SpaceX está desarrollando Starship, un sistema completamente reutilizable diseñado para transportar humanos a Marte. Su objetivo es reducir aún más los costos y hacer la exploración espacial accesible a futuras generaciones.</p>
+                `
+            },
+            'artemis': {
+                title: 'Artemis II: El Regreso de la Humanidad a la Luna',
+                category: 'Exploración',
+                date: '2024-01-05',
+                author: 'Oficial de Comunicaciones NASA',
+                readingTime: '7 min',
+                featured_image: 'https://via.placeholder.com/1200x400?text=Artemis',
+                excerpt: 'El programa Artemis llevará astronautas de vuelta a la Luna en años venideros.',
+                content: `
+                    <h2>El programa Artemis</h2>
+                    <p>Artemis es la ambiciosa iniciativa de la NASA para establecer una presencia humana sostenible en la Luna. Representa un paso crucial hacia el eventual viaje humano a Marte.</p>
+                    
+                    <h2>Artemis II: Misión próxima</h2>
+                    <p>Artemis II será una misión tripulada alrededor de la Luna, similar a Apolo 8 en 1968. Cuatro astronautas viajarán más lejos en el espacio que nunca antes desde la era Apolo.</p>
+                    
+                    <h2>Tecnología Artemis</h2>
+                    <p><strong>SLS (Space Launch System):</strong> El cohete más poderoso jamás construido.</p>
+                    <p><strong>Orión:</strong> Nave de tripulación capaz de viajar a la Luna y más allá.</p>
+                    <p><strong>Gateway:</strong> Estación espacial lunar en órbita lunar para futuras misiones.</p>
+                    
+                    <h2>Impacto global</h2>
+                    <p>Artemis no solo llevará a la humanidad de vuelta a la Luna, sino que establecerá la base para una civilización multiplanetaria. Con asociaciones internacionales y comerciales, el futuro del espacio nunca ha visto tan prometedor.</p>
+                `
+            },
+            'agujeros': {
+                title: 'Agujeros Negros: Los Misterios del Universo Desvelados',
+                category: 'Ciencia',
+                date: '2023-12-28',
+                author: 'Dra. Elena Rodríguez',
+                readingTime: '12 min',
+                featured_image: 'https://via.placeholder.com/1200x400?text=Agujeros+Negros',
+                excerpt: 'Qué sabemos sobre los objetos más misteriosos del universo.',
+                content: `
+                    <h2>¿Qué es un agujero negro?</h2>
+                    <p>Un agujero negro es una región del espacio donde la gravedad es tan intensa que nada, ni siquiera la luz, puede escapar. Se forman cuando estrellas masivas colapsan al final de sus vidas.</p>
+                    
+                    <h2>Tipos de agujeros negros</h2>
+                    <p><strong>Agujeros negros estelares:</strong> Formados por el colapso de estrellas masivas.</p>
+                    <p><strong>Agujeros negros supermásivos:</strong> Con millones o mil millones de masas solares, en los centros de las galaxias.</p>
+                    <p><strong>Agujeros negros primordiales:</strong> Formados en el Big Bang (hipotéticos).</p>
+                    
+                    <h2>El horizonte de sucesos</h2>
+                    <p>El horizonte de sucesos es el punto de no retorno alrededor de un agujero negro. Una vez cruzado, nada puede escapar. Ninguna información puede transmitirse desde dentro hacia afuera.</p>
+                    
+                    <h2>Primera imagen de un agujero negro</h2>
+                    <p>En 2019, el Event Horizon Telescope capturó la primera imagen de un agujero negro en la galaxia M87. En 2022, obtuvimos nuevas imágenes del agujero negro en Sagitario A*, en el centro de nuestra galaxia.</p>
+                    
+                    <h2>Preguntas aún sin respuesta</h2>
+                    <p>¿Qué sucede en la singularidad? ¿Pueden evaporarse los agujeros negros? ¿Existen agujeros de gusano? Estos misterios continúan siendo el objeto de investigación más emocionante de la astrofísica moderna.</p>
+                `
+            },
+            'jwst': {
+                title: 'El Telescopio James Webb: Nueva Era de Astronomía',
+                category: 'Tecnología',
+                date: '2023-12-20',
+                author: 'Ing. Roberto Martínez',
+                readingTime: '9 min',
+                featured_image: 'https://via.placeholder.com/1200x400?text=JWST',
+                excerpt: 'Cómo el telescopio más avanzado revoluciona nuestra comprensión del universo.',
+                content: `
+                    <h2>Historia del James Webb</h2>
+                    <p>Nombrado en honor a James E. Webb, administrador de la NASA durante el Programa Apolo, el JWST es resultado de más de dos décadas de desarrollo y colaboración internacional.</p>
+                    
+                    <h2>Capacidades sin precedentes</h2>
+                    <p>El JWST observa principalmente en el infrarrojo, permitiéndole ver a través del polvo cósmico y mirar hacia atrás en el tiempo hasta los primeros años del universo.</p>
+                    
+                    <h2>Logros principales</h2>
+                    <p><strong>Primeras galaxias:</strong> Vimos galaxias formadas solo 100 millones de años después del Big Bang.</p>
+                    <p><strong>Atmósferas de exoplanetas:</strong> Analizando químicamente mundos a años luz de distancia.</p>
+                    <p><strong>Nacimiento estelar:</strong> Imágenes detalladas de cómo se forman las estrellas.</p>
+                    
+                    <h2>Futuro de la astronomía</h2>
+                    <p>El JWST ha demostrado que estamos entrando en una nueva era donde la astronomía no es solo sobre observar, sino sobre comprender activamente la génesis y evolución del universo.</p>
+                `
+            },
+            'marte': {
+                title: 'La Carrera por Marte: Siguientes Pasos de la Humanidad',
+                category: 'Exploración',
+                date: '2023-12-15',
+                author: 'Oficial de Ciencias ESA',
+                readingTime: '11 min',
+                featured_image: 'https://via.placeholder.com/1200x400?text=Marte',
+                excerpt: 'Exploración actual de Marte y planes para la colonización humana.',
+                content: `
+                    <h2>Marte hoy</h2>
+                    <p>Marte es el planeta más estudiado después de la Tierra. Con varios rovers activos y orbitadores, continuamente aprendemos sobre este mundo fascinante.</p>
+                    
+                    <h2>Rovers actuales</h2>
+                    <p><strong>Perseverance (NASA):</strong> Buscando signos de vida microbiana antigua.</p>
+                    <p><strong>Zhurong (CNSA):</strong> Explorando el hemisferio sur.</p>
+                    <p><strong>Curiosity (NASA):</strong> Estudiando el Monte Sharp desde 2012.</p>
+                    
+                    <h2>¿Por qué Marte?</h2>
+                    <p>Marte tiene atmósfera, agua (hielo), recursos geológicos variados, y un clima potencialmente habitable con terraformación. Es el objetivo escogido para la expansión humana.</p>
+                    
+                    <h2>Misiones humanas</h2>
+                    <p>NASA planea llevar astronautas a Marte para los 2030s. Esto requerirá nuevas tecnologías de propulsión, sistemas de soporte vital avanzados, y años de preparación.</p>
+                    
+                    <h2>Desafíos</h2>
+                    <p>Radiación, duración del viaje (6-9 meses), gravedad reducida, factores psicológicos, y recursos limitados hacen de la exploración humana de Marte uno de los mayores desafíos que la humanidad ha enfrentado.</p>
+                `
+            }
+        };
+
+        // Obtener ID del artículo de la URL
+        const params = new URLSearchParams(window.location.search);
+        const articleId = params.get('id') || 'exoplanetas';
+        const article = articles[articleId];
+
+        if (article) {
+            // Actualizar breadcrumb
+            document.getElementById('breadcrumb-title').textContent = article.title;
+
+            // Actualizar contenido del hero
+            document.getElementById('article-title').textContent = article.title;
+            document.getElementById('article-category').textContent = article.category;
+            document.getElementById('article-date').textContent = new Date(article.date).toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('article-reading-time').textContent = article.readingTime;
+
+            // Insertar contenido del artículo
+            document.getElementById('article-content').innerHTML = article.content;
+
+            // Generar tabla de contenidos
+            const contentDiv = document.getElementById('article-content');
+            const headings = contentDiv.querySelectorAll('h2, h3');
+            const toc = document.getElementById('toc');
+            
+            if (headings.length > 0) {
+                let tocHTML = '<ul style="list-style: none; padding: 0;">';
+                headings.forEach((heading, index) => {
+                    const id = `heading-${index}`;
+                    heading.id = id;
+                    const level = heading.tagName === 'H2' ? 0 : 1;
+                    const indent = level * 12;
+                    const text = heading.textContent;
+                    tocHTML += `<li style="margin-left: ${indent}px; margin-bottom: 8px;"><a href="#${id}" style="color: var(--accent-primary); text-decoration: none;">${text}</a></li>`;
+                });
+                tocHTML += '</ul>';
+                toc.innerHTML = tocHTML;
+            }
+
+            // Artículos relacionados
+            const relatedIds = Object.keys(articles).filter(id => id !== articleId).slice(0, 3);
+            const relatedHTML = relatedIds.map(id => `
+                <a href="post.html?id=${id}" style="text-decoration: none;">
+                    <div class="card" style="cursor: pointer; transition: var(--transition-smooth);">
+                        <h5 style="margin-top: 0; color: var(--text-primary);">${articles[id].title}</h5>
+                        <p style="color: var(--text-tertiary); font-size: 0.9rem; margin: 0;">${articles[id].readingTime}</p>
+                    </div>
+                </a>
+            `).join('');
+            document.getElementById('related-articles').innerHTML = relatedHTML;
+        } else {
+            document.getElementById('article-hero').innerHTML = '<div style="padding: 40px; text-align: center;"><h1>Artículo no encontrado</h1><p><a href="blog.html">Volver al Blog</a></p></div>';
+        }
+    </script>
+</body>
+</html>

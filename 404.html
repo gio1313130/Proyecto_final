@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página no encontrada - ORBITA">
+    <title>404 - Página no encontrada | ORBITA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 2);
+        }
+
+        .error-content {
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .error-title {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: calc(var(--spacing-unit) * 1) 0;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 3) 0;
+            line-height: 1.6;
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 1);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .error-illustration {
+            margin: calc(var(--spacing-unit) * 3) 0;
+            font-size: 5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .suggestions {
+            margin-top: calc(var(--spacing-unit) * 4);
+            padding: calc(var(--spacing-unit) * 2);
+            background: var(--card-background);
+            border: 1px solid rgba(102, 217, 255, 0.1);
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .suggestions h3 {
+            color: var(--accent-primary);
+            margin-top: 0;
+        }
+
+        .suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suggestions li {
+            padding: calc(var(--spacing-unit) * 0.75) 0;
+        }
+
+        .suggestions a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .suggestions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-section">
+                <div class="logo">Ø</div>
+                <div class="brand">
+                    <div class="brand-name">ORBITA</div>
+                    <div class="brand-tagline">Exploración Espacial</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="misiones.html">Misiones</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+            </ul>
+            <a href="contacto.html" class="btn nav-cta">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="error-container">
+        <div class="error-content">
+            <div class="error-illustration">🚀</div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">¡Se perdió en el espacio!</h2>
+            <p class="error-message">La página que buscas no existe o ha sido movida a otra órbita. No te preocupes, volveremos a ponerte en la trayectoria correcta.</p>
+
+            <div class="error-buttons">
+                <a href="index.html" class="btn btn-primary">🏠 Volver a Inicio</a>
+                <a href="misiones.html" class="btn" style="background: var(--secondary-background); border: 1px solid var(--border-color);">🛸 Explorar Misiones</a>
+            </div>
+
+            <div class="suggestions">
+                <h3>¿Qué puedes hacer?</h3>
+                <ul>
+                    <li>📍 <a href="index.html">Regresa a la página principal</a></li>
+                    <li>🔭 <a href="misiones.html">Navega por nuestras misiones</a></li>
+                    <li>📖 <a href="blog.html">Lee nuestro blog</a></li>
+                    <li>💬 <a href="contacto.html">Contáctanos sobre este error</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ORBITA</h3>
+                    <p style="color: var(--text-secondary);">Plataforma educativa.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: var(--text-tertiary);">© 2024 ORBITA.</p>
+                <button class="back-to-top">↑ Arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
